@@ -23,13 +23,13 @@ body {
 }
 
 /* 최상단 타이틀 */
-#title {
+#titlelogo {
     font-family: "DungGeunMo", Arial, sans-serif;
     text-align: center;
     padding: 20px;
     font-size: 32px;
     font-weight: 700;
-    background-color: #4286c2; /* 타이틀 배경색 */
+    background-color: #4b85db; /* 타이틀 배경색 */
     color: white;
 }
 
@@ -62,6 +62,14 @@ body {
     list-style: none;
     padding: 0;
 }
+/* 서브 메뉴(중첩된 ul)*/
+#menu ul ul {
+    padding-left: 15px; /* 서브 메뉴 들여쓰기 */
+}
+#menu ul ul li a {
+    font-size: 0.9rem; /* 서브 메뉴 폰트 크기 축소 (16px 기준 14.4px) */ 
+    padding: 7px 15px; /* 서브 메뉴 패딩 조정 */
+}
 #menu li {
     margin-bottom: 5px;
     border-radius: 4px;
@@ -77,9 +85,17 @@ body {
 #menu a:hover {
     background-color: #e0e0e0;
 }
+#sidebarnevi {
+    font-size: 18px;
+    color: #3c69ac;
+    padding-bottom: 10px;
+    margin-top: 0; /* 불필요한 상단 마진 제거 */
+    margin-bottom: 10px; /* 메뉴와의 간격 확보 */
+    border-bottom: 2px solid #ddd; /* 구분선 */
+}
 
-/* 활성 페이지 표시 (현재 페이지) */
-.menu-item.active a {
+/* 활성 페이지 표시 */
+.menu-item.active > a {
     background-color: #cfe2f3; /* 활성 페이지 배경색 */
     color: #0b5394;
     font-weight: bold;
@@ -111,7 +127,6 @@ body {
     border-radius: 6px;
     margin-bottom: 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    text-align: center;
     min-height: 400px;
     display: flex;
     flex-direction: column;
