@@ -27,7 +27,7 @@ body {
     font-family: "DungGeunMo", Arial, sans-serif;
     text-align: center;
     padding: 28px;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     background-color: #4b85db; /* 타이틀 배경색 */
     color: white;
@@ -175,6 +175,9 @@ body {
 }
 #main h3 {
     font-size: 1.2rem;
+}
+#main p {
+    line-height: 2
 }
 
 /* 클래스 추가(블록형태) */
