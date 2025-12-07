@@ -26,9 +26,9 @@ body {
 #titlelogo {
     font-family: "DungGeunMo", Arial, sans-serif;
     text-align: center;
-    padding: 20px;
-    font-size: 32px;
-    font-weight: 700;
+    padding: 28px;
+    font-size: 2.2rem;
+    font-weight: bold;
     background-color: #4b85db; /* 타이틀 배경색 */
     color: white;
 }
@@ -44,6 +44,10 @@ body {
     background-color: white; /* 메인 배경색 */
 }
 
+
+
+/* =============== 사이드바 메뉴 설정 =============== */
+
 /* 사이드바 메뉴 스타일 */
 #menu {
     width: 200px; /* 사이드바 고정 너비 */
@@ -51,29 +55,75 @@ body {
     background-color: #f8f8f8;
     border-right: 1px solid #eee;
     flex-shrink: 0; /* 너비 고정 */
+    position: sticky; /* 메인 콘텐츠 스크롤 시 사이드바를 화면에 고정 */
 }
 #menu h3 {
     margin-top: 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid ;
     color: #0b5394;
 }
 #menu ul {
     list-style: none;
     padding: 0;
 }
+
+/* 햄버거 메뉴 버튼 기본 스타일 */
+#menu-toggle {
+    display: none; /* 데스크톱 모드에서 비활성 */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    
+    /* 크기 및 디자인 */
+    padding: 12px 18px; /* 패딩을 키워서 버튼 크기 확대 */
+    font-size: 1.2rem; /* 폰트 크기 확대 */
+    
+    background-color: #f8f8f8;
+    color: #4b85db;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: "Galmuri14", Arial, sans-serif;
+}
+
+/* 모바일 메뉴 전환 스타일 */
+.sidebar {
+    transition: transform 0.3s ease-in-out; 
+}
+.sidebar.hidden {   /* 모바일에서 숨김 (JS로 작동) */
+    transform: translateX(-100%);
+}
+.sidebar.visible {  /* 모바일에서 보임 (JS로 작동) */
+    transform: translateX(0);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
+}
+
+/* 메인 메뉴 항목의 기본 간격 */
+#menu li {
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+.menu-item > ul {
+    margin-top: 2px; /* 상위 메뉴와 첫 서브 메뉴 사이 간격 */
+}
+.menu-item > a {
+    margin-bottom: 0; /* 링크 아래 간격 제거 */
+}
+
 /* 서브 메뉴(중첩된 ul)*/
 #menu ul ul {
-    padding-left: 15px; /* 서브 메뉴 들여쓰기 */
+    padding-left: 25px; /* 서브 메뉴 들여쓰기 */
+}
+#menu ul ul li {
+    margin-bottom: 2px; /* 서브 메뉴 항목 간격 */
 }
 #menu ul ul li a {
     font-size: 0.9rem; /* 서브 메뉴 폰트 크기 축소 (16px 기준 14.4px) */ 
     padding: 7px 15px; /* 서브 메뉴 패딩 조정 */
 }
-#menu li {
-    margin-bottom: 5px;
-    border-radius: 4px;
-}
+
 #menu a {
     text-decoration: none;
     color: #333;
@@ -87,11 +137,12 @@ body {
 }
 #sidebarnevi {
     font-size: 18px;
-    color: #3c69ac;
-    padding-bottom: 10px;
+    color: #214e91;
+    padding-bottom: 12px;
     margin-top: 0; /* 불필요한 상단 마진 제거 */
-    margin-bottom: 10px; /* 메뉴와의 간격 확보 */
-    border-bottom: 2px solid #ddd; /* 구분선 */
+    margin-bottom: 2px; /* 메뉴와의 간격 확보 */
+    border-bottom: 2px solid #bbcbd8; /* 구분선 */
+    text-align: center;
 }
 
 /* 활성 페이지 표시 */
@@ -101,17 +152,32 @@ body {
     font-weight: bold;
 }
 
+/* =============== 사이드바 메뉴 설정 =============== */
+
+
+
 /* 메인 콘텐츠 영역 스타일 */
 #main {
     flex-grow: 1; /* 남은 공간 모두 채우기 */
     padding: 40px;
     line-height: 1.6;
 }
-#main h2 {
-    border-bottom: 3px solid #cfe2f3;
-    padding-bottom: 10px;
+#main h1 {
+    font-size: 1.6rem;
+    margin-top: 0; /* 불필요한 상단 마진 제거 */
+    padding-bottom: 6px;
     color: #0b5394;
 }
+#main h2 {
+    font-size: 1.4rem;
+    border-bottom: 3px solid #bcd9f1;
+    padding-bottom: 10px;
+}
+#main h3 {
+    font-size: 1.2rem;
+}
+
+/* 클래스 추가(블록형태) */
 .blog-post {
     background-color: #fcfcfc;
     padding: 20px;
@@ -133,26 +199,96 @@ body {
     justify-content: center;
 }
 
-/* 반응형 디자인: 화면이 좁아지면 사이드바를 숨기고 메뉴를 상단으로 */
+/* 기본 이미지 스타일: 컨테이너를 벗어나지 않도록 */
+img {
+    max-width: 100%;
+    height: auto; /* 이미지 비율 유지 */
+    display: block; /* 블록 요소로 설정 */
+}
+
+/* 지도 이미지 설정*/
+.map-section img {
+    width: 95%;
+    margin: 10px 0; /* 위아래 15px, 왼쪽 정렬 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 이미지 그림자 */
+}
+
+
+
+/* =============== 텍스트 강조 =============== */
+
+.text-red {
+    color: #a7203d;
+    font-weight: bold;
+}
+.text-blue {
+    color: #0765b8;
+    font-weight: bold;
+}
+.text-yellow {
+    color: #c5a40f;
+    font-weight: bold;
+}
+.text-green {
+    color: #1b7a26;
+    font-weight: bold;
+}
+.text-pink {
+    color: #da6eb4;
+    font-weight: bold;
+}
+.text-purple {
+    color: #7240ac;
+    font-weight: bold;
+}
+
+/* 구분선 */
+hr {
+    border: none; /* 브라우저 기본 테두리 제거 */
+    border-top: 1px solid #bcd9f1; /* 얇고 밝은 회색 실선으로 변경 */
+    margin: 0px 0; /* 위아래 여백 설정 */
+    width: 100%; /* 너비*/
+}
+
+
+
+/* =============== 반응형 =============== */
+
+/* 반응형 디자인: 화면이 좁아지면 사이드바를 숨기고 메뉴 출력 */
 @media (max-width: 768px) {
     #content-wrapper {
         flex-direction: column; /* 세로로 쌓기 */
         margin: 0;
         box-shadow: none;
     }
+    /* 메뉴 버튼 상단에 고정 */
+    #menu-toggle {
+        display: block; 
+        z-index: 100; /* 사이드바보다 위에 있도록 */
+    }
+    /* 사이드바 메뉴를 모바일용으로 */
     #menu {
-        width: 100%; /* 너비를 전체로 확장 */
-        border-right: none;
-        border-bottom: 1px solid #eee;
+        /* 너비, 높이, 위치 설정 */
+        width: 250px;
+        height: 100vh;
+        top: 0; /* 화면 최상단에서 시작 */
+        left: 0;
+        position: fixed; 
+        left: 0;
+        top: 0;
+        z-index: 50;
+        background-color: #f8f8f8; /* 배경색 유지 */
+        /* 메뉴 내용을 버튼 아래로 밀어내기 위해 패딩 설정 */
+        padding-top: 80px; /* 버튼이 고정된 영역만큼 조정 */
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
     }
     #menu ul {
-        display: flex; /* 메뉴 항목을 가로로 배열 */
-        justify-content: center;
-        gap: 10px;
+        gap: 0;
+        padding: 0;
     }
     #menu li {
-        flex-grow: 1;
-        text-align: center;
+        text-align: left;
     }
     #main {
         padding: 20px;
