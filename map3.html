@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractured Moon</title>
+    <!-- 스타일css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="titlelogo">PelipperMail</div>
+
+    <div id="content-wrapper">
+        
+        <!-- 메뉴 토글 버튼(데스크톱 모드에서는 비활성) -->
+        <button id="menu-toggle" class="hidden">&#9776;</button>
+
+        <!-- 사이드바 메뉴 -->
+        <div id="menu" class="sidebar">
+            <p id="sidebarnevi">무엇을 찾고 계신가요?</p>
+            <ul>
+                <!-- 소식 페이지(메인) -->
+                <li class="menu-item"><a href="index.html">🛜 소식</a></li>
+
+                <!-- 타운맵 -->
+                <li class="menu-item">
+                    <a href="townmap_main.html">🧭 타운맵</a>
+                    <!-- 서브 카테고리 -->
+                    <ul>
+                        <li class="menu-item active"><a href="map1.html">시어하트</a></li> <!-- 활성화 -->
+                        <li class="menu-item"><a href="map2.html">스타폴</a></li>
+                        <li class="menu-item"><a href="map3.html">프랙처 문</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 소개 영역 -->
+        <div id="main">
+            <h2>프랙처 문</h2>
+            
+            <div class="map-section">
+                <h3>프랙처 문</h3>
+                <p>소개</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./js/sidemenu.js"></script>
+</body>
+</html>
