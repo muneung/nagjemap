@@ -28,6 +28,9 @@ function initializeMenu() {
             menu.style.position = 'fixed';
             menu.style.height = '100vh';
             
+            // 데스크톱에서 설정된 인라인 transform 스타일을 제거하여 CSS 클래스 (.hidden)의 transform 규칙이 적용되게
+            menu.style.transform = '';
+
             // 만약 visible 또는 hidden 클래스가 설정되어 있지 않다면 hidden으로 시작
             if (!menu.classList.contains('visible') && !menu.classList.contains('hidden')) {
                  menu.classList.add('hidden');
@@ -36,12 +39,16 @@ function initializeMenu() {
             // 데스크톱 상태: 메뉴를 항상 보이게 함
             menu.style.transform = 'none'; // CSS 변형 제거 (항상 보이게)
             menu.classList.remove('hidden', 'visible'); // hidden/visible 클래스 제거
-            menu.style.position = 'initial'; // fixed 해제
-            menu.style.height = 'auto'; // 높이 제한 해제
+            
+            // 모바일에서 설정했던 모든 인라인 스타일을 제거
+            menu.style.position = '';  // CSS의 sticky가 적용되도록 초기화
+            menu.style.height = '';    // CSS의 max-height가 적용되도록 초기화
+            menu.style.top = ''; 
+            menu.style.left = '';
         }
     }
     
-    // 페이지 로드 시 및 화면 크기 변경 시 함수 실행
+    // 페이지 로드 시 및 화면 크기 변경 시 함수 menu.style.position = 'fixed'
     window.addEventListener('load', checkViewport);
     window.addEventListener('resize', checkViewport);
 
