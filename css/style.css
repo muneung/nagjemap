@@ -27,7 +27,7 @@ body {
     font-family: "DungGeunMo", Arial, sans-serif;
     text-align: center;
     padding: 28px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     background-color: #4b85db; /* 타이틀 배경색 */
     color: white;
@@ -44,7 +44,7 @@ body {
     background-color: white; /* 메인 배경색 */
 }
 
-/* 임시 핀 */
+/* 핫스팟 스타일 */
 .hotspot {
     position: absolute;
     width: 40px;
@@ -58,6 +58,7 @@ body {
     align-items: center;
     justify-content: center;
     transform: translate(-50%, -50%);
+    z-index: 10;
     }
         
     .hotspot::before {
@@ -111,7 +112,8 @@ body {
             opacity: 0;
         }
     }
-
+        
+    /* 안내 메시지 */
     .map-info {
         margin: 0 0 20px 0;
         padding: 15px 20px;
@@ -122,6 +124,10 @@ body {
         color: #1565c0;
     }
 
+    .map-container {
+        position: relative;
+        z-index: 5;
+    }
 
 
 /* =============== 사이드바 메뉴 설정 =============== */
@@ -254,9 +260,6 @@ body {
 #main h3 {
     font-size: 1.2rem;
 }
-#main p {
-    line-height: 2
-}
 
 /* 클래스 추가(블록형태) */
 .blog-post {
@@ -269,7 +272,7 @@ body {
 }
 .map-section {
     background-color: #fcfcfc;
-    padding: 20px;
+    padding: 0;
     border: 1px solid #eee;
     border-radius: 6px;
     margin-bottom: 20px;
@@ -289,9 +292,9 @@ img {
 
 /* 지도 이미지 설정*/
 .map-section img {
-    width: 100%;
-    margin: 10px 0; /* 위아래 15px, 왼쪽 정렬 */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 이미지 그림자 */
+    width: 100% !important;
+    margin: 0;
+    display: block;
 }
 
 
@@ -374,6 +377,5 @@ hr {
     #main {
         padding: 20px;
     }
-
+    
 }
-
