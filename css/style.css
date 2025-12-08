@@ -289,7 +289,7 @@ img {
 
 /* 지도 이미지 설정*/
 .map-section img {
-    width: 95%;
+    width: 100%;
     margin: 10px 0; /* 위아래 15px, 왼쪽 정렬 */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 이미지 그림자 */
 }
@@ -376,3 +376,4 @@ hr {
     }
 
 }
+
