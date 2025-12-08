@@ -48,12 +48,18 @@
             
             <div class="map-section">
                 <h3>시어하트 지도</h3>
-                <div class="map-container" id="mapContainer">
-                    <img src="./images/sheerheart.png" alt="시어하트 지도" class="map-image" id="mapImage">
-                    <!-- 이미지 수정해야됨 -->
+
+                <div class="map-section-inner">
+                    <div class="map-container" id="mapContainer">
+                        <img src="./images/sheerheart.png"
+                             alt="시어하트 지도"
+                             class="map-image"
+                             id="mapImage">
+                    </div>
                 </div>
-                <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
-                </p>
+            </div>
+        </div>
+    </div>
             </div>
             
         </div>
@@ -116,38 +122,83 @@
             { name: 'centerpin', x: 50, y: 50, url: 'loca_example.html' },
         ];
         
-        window.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('mapContainer');
             const mapImage = document.getElementById('mapImage');
+            let createdHotspots = [];
             
-            function createHotspots() {
+            function createHotspotElements() {
+
+                createdHotspots.forEach(h => h.el.remove());
+                createdHotspots = [];
+
                 hotspots.forEach(spot => {
-                    const hotspot = document.createElement('div');
-                    hotspot.className = 'hotspot';
-                    hotspot.style.left = spot.x + '%';
-                    hotspot.style.top = spot.y + '%';
+                    const el = document.createElement('div');
+                    el.className = 'hotspot';
+                    
+                    el.dataset.x = spot.x;
+                    el.dataset.y = spot.y;
+                    el.dataset.url = spot.url || '';
                     
                     const label = document.createElement('div');
                     label.className = 'hotspot-label';
-                    label.textContent = spot.name;
+                    label.textContent = spot.name || '';
+                    el.appendChild(label);
                     
-                    hotspot.appendChild(label);
+                    el.addEventListener('click', (e) => {
+                        const url = el.dataset.url;
+                        if (url) window.location.href = url;
+                    });    
                     
-                    hotspot.addEventListener('click', function() {
-                        window.location.href = spot.url;
-                    });
-                    
-                    container.appendChild(hotspot);
+                    container.appendChild(el);
+                    createdHotspots.push({ spot, el });
                 });
             }
-            
-            mapImage.addEventListener('load', createHotspots);
-            if (mapImage.complete) {
-                createHotspots();
+
+            function positionHotspots() {
+                const imgRect = mapImage.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+
+                if (imgRect.width === 0 || imgRect.height === 0) return;
+
+                createdHotspots.forEach(item => {
+                    const el = item.el;
+                    const pctX = parseFloat(el.dataset.x); // 0~100
+                    const pctY = parseFloat(el.dataset.y);
+
+                    const px = (pctX / 100) * mapImage.clientWidth;
+                    const py = (pctY / 100) * mapImage.clientHeight;
+
+                    el.style.left = px + 'px';
+                    el.style.top = py + 'px';
+                
+                });
             }
+
+            let resizeTimeout = null;
+            function scheduleReposition() {
+                if (resizeTimeout) clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(positionHotspots, 50);
+            }
+
+            function init() {
+                createHotspotElements();
+                positionHotspots();
+            }
+
+            if (mapImage.complete) {
+                init();
+            } else {
+                mapImage.addEventListener('load', init);
+            }
+
+            window.addEventListener('resize', scheduleReposition);
+            window.addEventListener('orientationchange', scheduleReposition);
+            window.addEventListener('scroll', scheduleReposition);
         });
     </script>
 </body>
 
 </html>
+
 
