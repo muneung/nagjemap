@@ -41,24 +41,13 @@
         <div id="main">
             <h1>시어하트</h1>
 
-            <div class="map-section">
-                <h2>시어하트 제도에 어서 오세요!</h2>
-                <a href="./images/sheerheart.png" target="_blank">
-                    <img id="sheerheartmapID" src="./images/sheerheart.png" alt="이데아 지도" />
-                </a>
-                <p>
-                    리그에 도전하기 위해 시어하트 제도에서 획득할 수 있는 배지는 4개까지입니다.<br>
-                    어디를 여행할지, 어떤 체육관부터 도전할 것인지는 온전히 당신의 선택에 달려 있습니다.<br>
-                    행운을 빌어요, 트레이너!
-                </p>
+            <!-- 디테일 파일 로딩 영역 -->
+            <div id="detail-content-area">
+                <p id="loading-message">상세 정보를 불러오는 중입니다...</p>
             </div>
-
+            
             <!-- 지도 테이블 -->
             <div class="map-section">
-                    [ ★ ] : 체육관이 있는 장소<br>
-                    [ ☆ ] : 특별한 포켓몬이 있는/있던 장소<br>
-                    [ ♬ ] : 프렌들리숍과 식재료 상점이 있는 장소<br>
-                    [ ♪ ] : 기타 구매 가능 물품이 있는 장소<br><br>
                 <div class="map-table-container">
                     <style type="text/css">
                         .ritz .waffle a {
@@ -814,6 +803,7 @@
     </div>
 
     <script src="./js/sidemenu.js"></script>
+    <script src="./js/detailLoader.js"></script>
 </body>
 
 </html>

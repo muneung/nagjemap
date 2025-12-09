@@ -17,6 +17,45 @@
     font-style: normal;
 }
 
+/* =============== 텍스트 강조 =============== */
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-red {
+    color: #a7203d;
+    font-weight: bold;
+}
+.text-blue {
+    color: #0765b8;
+    font-weight: bold;
+}
+.text-yellow {
+    color: #c5a40f;
+    font-weight: bold;
+}
+.text-green {
+    color: #1b7a26;
+    font-weight: bold;
+}
+.text-pink {
+    color: #da6eb4;
+    font-weight: bold;
+}
+.text-purple {
+    color: #7240ac;
+    font-weight: bold;
+}
+
+/* 구분선 */
+hr {
+    border: none; /* 브라우저 기본 테두리 제거 */
+    border-top: 2px solid #bcd9f1; /* 구분선 색 */
+    margin: 0px 0; /* 위아래 여백 설정 */
+    width: 100%; /* 너비*/
+}
+
 /* 기본 스타일 및 폰트 설정 */
 body {
     overflow-y: scroll; /* 세로 스크롤바를 항상 표시*/
@@ -143,7 +182,7 @@ body {
     background-color: #e0e0e0;
 }
 #sidebarnevi {
-    font-size: 18px;
+    font-size: 1.1rem;
     color: #214e91;
     padding-bottom: 12px;
     margin-top: 0; /* 불필요한 상단 마진 제거 */
@@ -172,17 +211,17 @@ body {
     overflow-x: hidden; /* #main의 경계를 넘는 콘텐츠를 숨기고 스크롤을 하위 요소에 위임 */
 }
 #main h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: 0; /* 불필요한 상단 마진 제거 */
     padding-bottom: 6px;
     color: #0b5394;
 }
 #main h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding-bottom: 6px;
 }
 #main h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 #main p {
     text-align: justify; /* 텍스트 가로폭 정리 */
@@ -213,8 +252,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 2;  /* 행간 조정 */
+    letter-spacing: -0.2px;     /* 자간 조정 */
 }
 
 /* 타운맵 디테일 기본(이용 시설 없는 경우) */
@@ -229,8 +269,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 2;  /* 행간 조정 */
+    letter-spacing: -0.2px;     /* 자간 조정 */
 }
 
 /* 타운맵 디테일(시설 있을 때) */
@@ -245,14 +286,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 2;  /* 행간 조정 */
+    letter-spacing: -0.2px;     /* 자간 조정 */
 }
 .facility-guide {
     width: 100%; /* 가로 전체 너비 */
     background-color: #f0f0f0; 
     border-radius: 4px;
-    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .facility-guide ul {
     list-style: none; /* 리스트 점 제거 */
@@ -284,10 +331,10 @@ body {
     border-radius: 6px;
 
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 0px;
     width: 100%;
 
-    max-height: 640px;
+    max-height: 560px;
     overflow-x: auto;
     overflow-y: auto;
 
@@ -302,13 +349,83 @@ body {
     border-collapse: collapse; /* 테두리 겹침 x */
 }
 
-/* 모든 테이블 셀에 고정 크기 (가로 100px, 세로 56px) 적용 */
+/* 모든 테이블 셀에 고정 크기 (가로 80px, 세로 50px) 적용 */
 .map-table-container table td,
 .map-table-container table th {
-    width: 100px; 
-    height: 56px; 
+    width: 80px; 
+    height: 50px; 
     white-space: nowrap; 
     vertical-align: middle; 
+}
+
+
+
+/* =============== 도로 안내 테이블 레이아웃 =============== */
+.route-table-wrapper {
+    width: 100%;
+}
+
+/* 테이블 스타일 */
+.route-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.route-table th, .route-table td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+}
+.route-table th {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+
+
+/* =============== 유튜브 레이아웃 =============== */
+/* 제목(h4)과 유튜브 영역을 가로로 배치하는 컨테이너 */
+.header-and-youtube {
+    display: flex;             /* 가로 배치 */
+    justify-content: space-between; /* 제목은 왼쪽, 유튜브는 오른쪽 끝으로 배치 */
+    align-items: flex-start;   /* 항목들을 위쪽 정렬 */
+    margin-bottom: 10px;       /* 하단 간격 */
+    align-items: center;
+}
+
+.header-and-youtube h4 {
+    /* 기본 상하 마진을 제거하여 정렬을 깔끔하게 */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* 상단 헤더에 위치하는 유튜브 영역 스타일 */
+.youtube-area-header {
+    width: 240px; /* 적당한 고정 너비 지정 */
+    flex-shrink: 0; /* 제목이 길어져도 이 영역이 줄어들지 않도록 설정 */
+    text-align: center;
+}
+
+/* 플레이스홀더 높이 조정 */
+.youtube-area-header .video-placeholder {
+    padding: 10px;
+    overflow: hidden; /* 높이를 벗어나는 콘텐츠 숨김 */
+    position: relative; /* iframe의 기준점 설정 */
+    background-color: #f2f2f2;
+}
+/* 🚀 재생바만 보이도록 iframe 위치 조정 */
+.cropped-youtube-player {
+    display: block;
+    width: 100%;
+    
+    /* HTML에서 설정한 iframe 높이와 일치해야 함 */
+    height: 100px; 
+    
+    /* 위로 밀어 올리는 마진(Margin) 값 계산: (iframe 높이 100px) - (자르기 컨테이너 높이 20px) = 80px */
+    margin-top: -20px; 
 }
 
 
@@ -324,45 +441,8 @@ img {
 /* 지도 이미지 설정*/
 .map-section img {
     width: 100%;
-    margin: 10px auto; /* 위아래 15px, 중앙 정렬 */
+    margin: 10px auto; /* 위아래 10px, 중앙 정렬 */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 이미지 그림자 */
-}
-
-
-
-/* =============== 텍스트 강조 =============== */
-
-.text-red {
-    color: #a7203d;
-    font-weight: bold;
-}
-.text-blue {
-    color: #0765b8;
-    font-weight: bold;
-}
-.text-yellow {
-    color: #c5a40f;
-    font-weight: bold;
-}
-.text-green {
-    color: #1b7a26;
-    font-weight: bold;
-}
-.text-pink {
-    color: #da6eb4;
-    font-weight: bold;
-}
-.text-purple {
-    color: #7240ac;
-    font-weight: bold;
-}
-
-/* 구분선 */
-hr {
-    border: none; /* 브라우저 기본 테두리 제거 */
-    border-top: 2px solid #bcd9f1; /* 구분선 색 */
-    margin: 0px 0; /* 위아래 여백 설정 */
-    width: 100%; /* 너비*/
 }
 
 
