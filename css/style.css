@@ -404,28 +404,30 @@ body {
 
 /* 상단 헤더에 위치하는 유튜브 영역 스타일 */
 .youtube-area-header {
-    width: 240px; /* 적당한 고정 너비 지정 */
-    flex-shrink: 0; /* 제목이 길어져도 이 영역이 줄어들지 않도록 설정 */
-    text-align: center;
+    width: 100%; 
+    max-width: 200px; /* 유튜브 전체 영역의 최대 너비를 240px로 고정 */
+    flex-shrink: 0; 
 }
 
-/* 플레이스홀더 높이 조정 */
+/* 플레이스홀더에 비율 적용 (16:9 비율 유지) */
 .youtube-area-header .video-placeholder {
-    padding: 10px;
-    overflow: hidden; /* 높이를 벗어나는 콘텐츠 숨김 */
-    position: relative; /* iframe의 기준점 설정 */
-    background-color: #f2f2f2;
-}
-/* 🚀 재생바만 보이도록 iframe 위치 조정 */
-.cropped-youtube-player {
-    display: block;
+    position: relative;
     width: 100%;
-    
-    /* HTML에서 설정한 iframe 높이와 일치해야 함 */
-    height: 100px; 
-    
-    /* 위로 밀어 올리는 마진(Margin) 값 계산: (iframe 높이 100px) - (자르기 컨테이너 높이 20px) = 80px */
-    margin-top: -20px; 
+    padding-bottom: 56.25%; /* padding-bottom 값은 항상 '부모의 너비'를 기준으로 계산 */
+    height: 0; /* 본래 높이를 0으로 만들어 패딩으로만 높이를 결정 */
+    overflow: hidden; 
+    background-color: black;
+}
+
+/* iframe (유튜브 플레이어) 스타일 */
+.cropped-youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 부모 컨테이너가 패딩으로 확보한 공간을 채움 */
+    margin-top: 0 !important; 
+    display: block;
 }
 
 
