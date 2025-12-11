@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,44 +10,17 @@
 </head>
 
 <!-- 임시로 일단 프랙처문 자리에 넣어서 테스트 -->
-    
+
 <body>
     <div id="titlelogo">PelipperMail</div>
 
     <div id="content-wrapper">
-        
+
         <!-- 메뉴 토글 버튼(데스크톱 모드에서는 비활성) -->
         <button id="menu-toggle" class="hidden">&#9776;</button>
 
-        <!-- 사이드바 메뉴 -->
         <div id="menu" class="sidebar">
-            <p id="sidebarnevi">무엇을 찾고 계신가요?</p>
-            <ul>
-                <!-- 소식 페이지(메인) -->
-                <li class="menu-item"><a href="index.html">🛜 소식</a></li>
-
-                <!-- 타운맵 -->
-                <li class="menu-item">
-                    <a href="townmap_main.html">🧭 타운맵</a>
-                    <!-- 서브 카테고리 -->
-                    <ul>
-                        <li class="menu-item"><a href="map1.html">시어하트</a></li>
-                        <li class="menu-item"><a href="map2.html">스타폴</a></li>
-                        <li class="menu-item active"><a href="map3.html">프랙처 문</a></li> <!-- active -->
-                    </ul>
-
-                <!-- 도감 -->
-                <li class="menu-item">
-                    <a href="pokedex_main.html">📕 이데아도감</a>
-                    <!-- 서브 카테고리 -->
-                    <ul>
-                        <li class="menu-item"><a href="pokeitem.html">아이템</a></li>
-                        <li class="menu-item"><a href="idearegion.html">이데아의 포켓몬</a></li>
-                        <li class="menu-item"><a href="shop.html">프렌들리숍</a></li>
-                        <li class="menu-item"><a href="recipe.html">레시피북</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <p>메뉴 로드 중...</p>
         </div>
 
         <!-- 소개 영역 -->
@@ -56,26 +30,25 @@
             <div class="map-info">
                 💡 지도를... 어쩌고... 터치... 어쩌고.
             </div>
-            
+
             <div class="map-section">
                 <h3>시어하트 지도</h3>
 
                 <div class="map-section-inner">
                     <div class="map-container" id="mapContainer">
-                        <img src="./images/sheerheart.png"
-                             alt="시어하트 지도"
-                             class="map-image"
-                             id="mapImage">
+                        <img src="./images/sheerheart.png" alt="시어하트 지도" class="map-image" id="mapImage">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-            </div>
-            
-        </div>
     </div>
 
+    </div>
+    </div>
+
+    <script src="./js/sidemenu.js"></script>
+    <script src="./js/loader.js"></script>
     <script>
         // 참조: hotspot 참조 js 단위 필요로(역량부족) 임시로 html에 쌩으로 붙여넣음 - 최적화 필요 //
         function initializeMenu() {
@@ -97,7 +70,7 @@
             function checkViewport() {
                 // 모바일 기준 폭 768px
                 const isMobile = window.innerWidth <= 768;
-                
+
                 if (isMobile) {
                     // 모바일 상태: 메뉴를 fixed로 고정하고 숨김 상태로 시작하도록 클래스 설정
                     menu.style.position = 'fixed';
@@ -121,7 +94,7 @@
             window.addEventListener('resize', checkViewport);
 
             // load 이벤트 이전에 스크립트가 실행될 경우를 대비해 한 번 즉시 실행
-            checkViewport(); 
+            checkViewport();
         }
 
         // DOM 콘텐츠가 모두 로드된 후 initializeMenu 함수 실행
@@ -132,12 +105,12 @@
             // 왼쪽 지역
             { name: 'centerpin', x: 50, y: 50, url: 'loca_example.html' },
         ];
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('mapContainer');
             const mapImage = document.getElementById('mapImage');
             let createdHotspots = [];
-            
+
             function createHotspotElements() {
 
                 createdHotspots.forEach(h => h.el.remove());
@@ -146,21 +119,21 @@
                 hotspots.forEach(spot => {
                     const el = document.createElement('div');
                     el.className = 'hotspot';
-                    
+
                     el.dataset.x = spot.x;
                     el.dataset.y = spot.y;
                     el.dataset.url = spot.url || '';
-                    
+
                     const label = document.createElement('div');
                     label.className = 'hotspot-label';
                     label.textContent = spot.name || '';
                     el.appendChild(label);
-                    
+
                     el.addEventListener('click', (e) => {
                         const url = el.dataset.url;
                         if (url) window.location.href = url;
-                    });    
-                    
+                    });
+
                     container.appendChild(el);
                     createdHotspots.push({ spot, el });
                 });
@@ -182,7 +155,7 @@
 
                     el.style.left = px + 'px';
                     el.style.top = py + 'px';
-                
+
                 });
             }
 
@@ -211,5 +184,3 @@
 </body>
 
 </html>
-
-

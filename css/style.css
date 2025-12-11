@@ -126,6 +126,73 @@ body {
     padding: 0;
 }
 
+
+/* 메인 메뉴 항목의 기본 간격 */
+#menu li {
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+/* 최상위 항목 간 여백 확보 (소식-타운맵, 타운맵-이데아도감 사이) */
+#menu .menu-root {
+    margin-bottom: 10px;
+}
+#menu .menu-item > ul {
+    margin-top: 2px; /* 상위 메뉴와 첫 서브 메뉴 사이 간격 */
+}
+#menu .menu-item > a {
+    margin-bottom: 0; /* 링크 아래 간격 제거 */
+}
+
+/* 서브 메뉴(중첩된 ul)*/
+#menu ul ul {
+    padding-left: 25px; /* 서브 메뉴 들여쓰기 */
+}
+#menu ul ul li {
+    margin-bottom: 2px; /* 서브 메뉴 항목 간격 */
+}
+#menu ul ul li a {
+    font-size: 0.9rem; /* 서브 메뉴 폰트 크기 축소 (16px 기준 14.4px) */ 
+    padding: 7px 15px; /* 서브 메뉴 패딩 조정 */
+}
+
+#menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+#menu a:hover {
+    background-color: #e0e0e0;
+}
+
+#sidebarnevi {
+    font-size: 1.1rem;
+    color: #214e91;
+    padding-bottom: 12px;
+    margin-top: 0; /* 불필요한 상단 마진 제거 */
+    margin-bottom: 2px; /* 메뉴와의 간격 확보 */
+    border-bottom: 2px solid #bbcbd8; /* 구분선 */
+    text-align: center;
+}
+
+/* 활성 페이지 표시 */
+.menu-item.active > a {
+    background-color: #cfe2f3; /* 활성 페이지 배경색 */
+    color: #0b5394;
+    font-weight: bold;
+}
+
+/* 이데아도감 <span>을 <a> 태그와 동일하게 조정(메뉴 간격 통일 때문에) */
+.menu-root > .menu-link-like {
+    color: #333;
+    display: block; /* <a>와 같은 블록 속성 부여 */
+    padding: 10px 15px; /* <a>와 같은 패딩 부여 */
+    border-radius: 4px;
+}
+
+
 /* 햄버거 메뉴 버튼 기본 스타일 */
 #menu-toggle {
     display: none; /* 데스크톱 모드에서 비활성 */
@@ -154,59 +221,6 @@ body {
     transform: translateX(0);
     box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
 }
-
-/* 메인 메뉴 항목의 기본 간격 */
-#menu li {
-    margin-bottom: 6px;
-    border-radius: 4px;
-}
-.menu-item > ul {
-    margin-top: 2px; /* 상위 메뉴와 첫 서브 메뉴 사이 간격 */
-}
-.menu-item > a {
-    margin-bottom: 0; /* 링크 아래 간격 제거 */
-}
-
-/* 서브 메뉴(중첩된 ul)*/
-#menu ul ul {
-    padding-left: 25px; /* 서브 메뉴 들여쓰기 */
-}
-#menu ul ul li {
-    margin-bottom: 2px; /* 서브 메뉴 항목 간격 */
-}
-#menu ul ul li a {
-    font-size: 0.9rem; /* 서브 메뉴 폰트 크기 축소 (16px 기준 14.4px) */ 
-    padding: 7px 15px; /* 서브 메뉴 패딩 조정 */
-}
-
-#menu a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-#menu a:hover {
-    background-color: #e0e0e0;
-}
-#sidebarnevi {
-    font-size: 1.1rem;
-    color: #214e91;
-    padding-bottom: 12px;
-    margin-top: 0; /* 불필요한 상단 마진 제거 */
-    margin-bottom: 2px; /* 메뉴와의 간격 확보 */
-    border-bottom: 2px solid #bbcbd8; /* 구분선 */
-    text-align: center;
-}
-
-/* 활성 페이지 표시 */
-.menu-item.active > a {
-    background-color: #cfe2f3; /* 활성 페이지 배경색 */
-    color: #0b5394;
-    font-weight: bold;
-}
-
 /* =============== 사이드바 메뉴 설정 =============== */
 
 
@@ -369,6 +383,27 @@ body {
     text-align: center;
 }
 .route-table th {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+
+
+/* =============== 출현 포켓몬 테이블 레이아웃 =============== */
+/* 테이블 스타일 */
+.pokemon-spawn-table {
+    width: 100%;
+    table-layout: fixed; /* 너비 제어용 */
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.pokemon-spawn-table th, .pokemon-spawn-table td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+}
+.pokemon-spawn-table th {
     background-color: #f0f0f0;
     text-align: center;
 }
