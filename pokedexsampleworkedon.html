@@ -7,6 +7,238 @@
     <title>SheerHeart</title>
     <!-- 스타일css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- 도감 스타일 -->
+        <style>
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: white;
+            border: 2px solid #4b85db;
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background: #4b85db;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .section-content {
+            background: white;
+        }
+
+        .dex-description {
+            padding: 15px;
+        }
+
+        .dex-notice {
+            background: #4b85db;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        .dex-number-header {
+            background: #4b85db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .dex-number-header img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .dex-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .dex-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        .dex-table td:first-child {
+            background: #f8f9fa;
+            font-weight: bold;
+            width: 120px;
+            text-align: center;
+        }
+
+        .type-chart {
+            padding: 0;
+        }
+
+        .type-row {
+            display: flex;
+            border-bottom: 1px solid #4b85db;
+        }
+
+        .type-row:last-child {
+            border-bottom: none;
+        }
+
+        .type-multiplier {
+            flex: 1;
+            background: #4b85db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-right: 1px solid white;
+        }
+
+        .type-multiplier:last-child {
+            border-right: none;
+        }
+
+        .type-badges {
+            flex: 4;
+            padding: 12px;
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .type-badge {
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            display: inline-block;
+        }
+
+        .type-normal { background: #A8A878; }
+        .type-dragon { background: #7038F8; }
+        .type-fairy { background: #EE99AC; }
+        .type-steel { background: #B8B8D0; }
+        .type-fighting { background: #C03028; }
+        .type-ghost { background: #705898; }
+        .type-ground { background: #E0C068; }
+        .type-rock { background: #B8A038; }
+        .type-dark { background: #705848; }
+        .type-bug { background: #A8B820; }
+        .type-fire { background: #F08030; }
+        .type-water { background: #6890F0; }
+        .type-grass { background: #78C850; }
+        .type-electric { background: #F8D030; }
+        .type-psychic { background: #F85888; }
+        .type-ice { background: #98D8D8; }
+        .type-poison { background: #A040A0; }
+        .type-flying { background: #A890F0; }
+
+        .stats-section {
+            padding: 0;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .stats-table th,
+        .stats-table td {
+            border: 1px solid #4b85db;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .stats-table th {
+            background: #4b85db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .stats-table td {
+            background: white;
+        }
+
+        .stats-table .pokemon-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stats-table .pokemon-cell img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .stats-total {
+            font-weight: bold;
+            color: #4b85db;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th,
+        .info-table td {
+            border: 1px solid #4b85db;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .info-table th {
+            background: #4b85db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .info-table td {
+            background: white;
+        }
+
+        .info-table .name-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-table .name-cell img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .info-table .small-text {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .type-badge-small {
+            display: inline-block;
+            padding: 3px 10px;
+            margin: 0 2px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,8 +271,8 @@
                     <a href="pokedex_main.html">📕 이데아도감</a>
                     <!-- 서브 카테고리 -->
                     <ul>
-                        <li class="menu-item active"><a href="pokeitem.html">아이템</a></li> <!-- 활성화 -->
-                        <li class="menu-item"><a href="idearegion.html">이데아의 포켓몬</a></li>
+                        <li class="menu-item"><a href="pokeitem.html">아이템</a></li>
+                        <li class="menu-item active"><a href="idearegion.html">이데아의 포켓몬</a></li> <!-- 활성화 -->
                         <li class="menu-item"><a href="shop.html">프렌들리숍</a></li>
                         <li class="menu-item"><a href="recipe.html">레시피북</a></li>
                     </ul>
@@ -48,10 +280,156 @@
             </ul>
         </div>
 
-        <!-- 소개 영역 -->
-       
+    <div class="container">
+
+        <!-- 기본 정보 섹션 -->
+        <div class="section">
+            <div class="section-header">기본 정보</div>
+            <div class="section-content" style="padding: 0;">
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>도감 번호</th>
+                            <th>타입</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="name-cell">
+                                    <img src="./images/두르보_이데아폼.png" alt="두르보">
+                                    <div><strong>두르보</strong></div>
+                                    <div class="small-text">クルミル(쿠루미루)</div>
+                                    <div class="small-text">Sewaddle</div>
+                                </div>
+                            </td>
+                            <td>
+                                전국: 0540
+                            </td>
+                            <td>
+                                <span class="type-badge-small type-bug">벌레</span><br>
+                                <span class="type-badge-small type-fairy">페어리</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="name-cell">
+                                    <img src="./images/두르쿤_이데아폼.png" alt="두르쿤">
+                                    <div><strong>두르쿤</strong></div>
+                                    <div class="small-text">クルマユ(쿠루마유) </div>
+                                    <div class="small-text">Swadloon</div>
+                                </div>
+                            </td>
+                            <td>
+                                전국: 0541<br>
+                            </td>
+                            <td>
+                                <span class="type-badge-small type-bug">벌레</span><br>
+                                <span class="type-badge-small type-fairy">페어리</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+
+        <!-- 특성 섹션 -->
+        <div class="section">
+            <div class="section-header">특성(숨겨진 특성은 *)</div>
+            <div class="section-content" style="padding: 0;">
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td style="background: #EE99AC; color: white; font-weight: bold;">벌레의알림</td>
+                            <td>HP가 줄었을 때 벌레타입 기술의 위력이 올라간다.</td>
+                        </tr>
+                        <tr>
+                            <td style="background: #EE99AC; color: white; font-weight: bold;">플라워베일</td>
+                            <td>같은 편의 풀타입 포켓몬은 능력이 떨어지지 않고<br> 상태 이상도 되지 않는다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 세부 정보 섹션 -->
+        <div class="section">
+            <div class="section-header">세부 정보</div>
+            <div class="section-content" style="padding: 0;">
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>포켓몬</th>
+                            <th>분류</th>
+                            <th>신장</th>
+                            <th>체중</th>
+                            <th>포획률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0540 두르보</td>
+                            <td>재봉포켓몬</td>
+                            <td>0.3m</td>
+                            <td>2.5kg</td>
+                            <td rowspan="2">45</td>
+                        </tr>
+                        <tr>
+                            <td>0541 두르쿤</td>
+                            <td>바늘겨레포켓몬</td>
+                            <td>0.5m</td>
+                            <td>7.3kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 육성 정보 섹션 -->
+        <div class="section">
+            <div class="section-header">육성 정보</div>
+            <div class="section-content" style="padding: 0;">
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>성비</th>
+                            <th>알 그룹</th>
+                            <th>부화 카운트</th>
+                            <th>최대 경험치량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>수컷: 50%<br>암컷: 50%</td>
+                            <td>벌레, 요정</td>
+                            <td>30</td>
+                            <td>1,000,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 도감 설명 섹션 -->
+        <div class="section">
+            <div class="section-header">도감 설명</div>
+            <div class="dex-notice">
+            </div>
+            <div class="section-content">
+                <div class="dex-number-header">
+                    <img src="./images/두르보_이데아폼.png" alt="두르보">
+                    <span>0540 두르보</span>
+                </div>
+                <table class="dex-table">
+                        <td>낙오자의<br>제전</td>
+                        <td>알에서 태어나면 모아머가 만든 옷을 받아 뒤집어 쓴다. 나뭇잎을 물어끊어서 입에서 내는 점착실로 꿰매어 잇는다.<br>추운 이데아지방에 맞는 복슬복슬한 옷을 만들어 입는다.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>  
 
     <script src="./js/sidemenu.js"></script>
 </body>
