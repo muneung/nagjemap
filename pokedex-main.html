@@ -30,20 +30,56 @@
         .section-content {
             background: white;
         }
-        .list-table th,
-        .list-table td{
-            border: 1px solid #4b85db;
-            padding: 12px 8px;
+
+        .section-content table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .list-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .list-table th {
+            background: #4b85db;
+            color: white;
+            font-weight: bold;
+            padding: 14px 10px;
+            font-size: 15px;
             text-align: center;
+            border-bottom: 2px solid #4b85db;
+        }
+        
+        .list-table td{
+            border-bottom: 1px solid #d3d3d3;
+            padding: 14px 10px;
+            font-size: 15px;
+            text-align: center;
+            vertical-align: middle;
         }
         .list-table th {
             background: #4b85db;
             color: white;
             font-weight: bold;
         }
-        .list-table td {
-            background: white;
-        }
+        
+        .list-table th:nth-child(1),
+        .list-table td:nth-child(1) {
+            width: 12%;
+        }  
+
+        .list-table th:nth-child(2),
+        .list-table td:nth-child(2) {
+            width: 33%;
+        }          
+
+        .list-table th:nth-child(3),
+        .list-table td:nth-child(3) {
+            width: 55%;
+        }   
+
         .list-table .pokemon-cell {
             display: flex;
             flex-direction: column;
@@ -51,8 +87,8 @@
             gap: 5px;
         }
         .list-table .pokemon-cell img {
-            width: 40px;
-            height: 40px;
+            width: 70px;
+            height: 70px;
         }
         .type-badge {
             padding: 5px 12px;
@@ -117,7 +153,7 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th colspan="2">포켓몬</th>
+                                    <th>포켓몬</th><!--하이퍼링크-->
                                     <th>타입</th>
                                 </tr>
                             </thead>
@@ -129,10 +165,8 @@
                                     <td>
                                         <div class="pokemon-cell">
                                             <img src="./images/두르보_이데아폼.png" alt="두르보">
+                                            <strong>두르보</strong>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <strong>두르보</strong><!--하이퍼링크-->
                                     </td>
                                     <td>
                                         <span class="type-badge-small type-bug">벌레</span>
