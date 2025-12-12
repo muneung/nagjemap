@@ -86,10 +86,21 @@
             align-items: center;
             gap: 5px;
         }
+
         .list-table .pokemon-cell img {
             width: 70px;
             height: 70px;
         }
+
+        .poke-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .poke-link:hover {
+            text-decoration: underline; /* 또는 color 변경 */
+        }
+
         .type-badge {
             padding: 5px 12px;
             border-radius: 4px;
@@ -165,7 +176,7 @@
                                     <td>
                                         <div class="pokemon-cell">
                                             <img src="./images/두르보_이데아폼.png" alt="두르보">
-                                            <strong>두르보</strong>
+                                            <a href="./두르보.html" class="poke-link">두르보</a>
                                         </div>
                                     </td>
                                     <td>
