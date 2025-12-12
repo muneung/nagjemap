@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheerHeart</title>
+    <!-- 스타일css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .container{
+            max-width: 800px;
+            width:95%;
+            margin: 0 auto;
+        }
+        .section {
+            background: white;
+            border: 2px solid #4b85db;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .section-header {
+            background: #4b85db;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .section-content {
+            background: white;
+        }
+        .list-table th,
+        .list-table td{
+            border: 1px solid #4b85db;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        .list-table th {
+            background: #4b85db;
+            color: white;
+            font-weight: bold;
+        }
+        .list-table td {
+            background: white;
+        }
+        .list-table .pokemon-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .list-table .pokemon-cell img {
+            width: 40px;
+            height: 40px;
+        }
+        .type-badge {
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            display: inline-block;
+        }
+
+        .type-normal { background: #A8A878; }
+        .type-dragon { background: #7038F8; }
+        .type-fairy { background: #EE99AC; }
+        .type-steel { background: #B8B8D0; }
+        .type-fighting { background: #C03028; }
+        .type-ghost { background: #705898; }
+        .type-ground { background: #E0C068; }
+        .type-rock { background: #B8A038; }
+        .type-dark { background: #705848; }
+        .type-bug { background: #A8B820; }
+        .type-fire { background: #F08030; }
+        .type-water { background: #6890F0; }
+        .type-grass { background: #78C850; }
+        .type-electric { background: #F8D030; }
+        .type-psychic { background: #F85888; }
+        .type-ice { background: #98D8D8; }
+        .type-poison { background: #A040A0; }
+        .type-flying { background: #A890F0; }
+
+        .type-badge-small {
+            display: inline-block;
+            padding: 3px 10px;
+            margin: 0 2px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="titlelogo">PelipperMail</div>
+
+    <div id="content-wrapper">
+
+        <!-- 메뉴 토글 버튼(데스크톱 모드에서는 비활성) -->
+        <button id="menu-toggle" class="hidden">&#9776;</button>
+
+        <div id="menu" class="sidebar">
+            <p>메뉴 로드 중...</p>
+        </div>
+        <!--도감-->
+        <div id="main">
+            <h1>이데아의 포켓몬</h1>
+            <div class="container">
+                <!--목록세션-->
+                <div class="section">
+                    <div class="section-header">도감목록</div>
+                    <div class="section-content" style="padding: 0;">
+                        <table class="list-table">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th colspan="2">포켓몬</th>
+                                    <th>타입</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!--No.-->
+                                    <td>0540</td>
+                                    <!--포켓몬-->
+                                    <td>
+                                        <div class="pokemon-cell">
+                                            <img src="./images/두르보_이데아폼.png" alt="두르보">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <strong>두르보</strong><!--하이퍼링크-->
+                                    </td>
+                                    <td>
+                                        <span class="type-badge-small type-bug">벌레</span>
+                                        <span class="type-badge-small type-fairy">페어리</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/sidemenu.js"></script>
+    <script src="./js/loader.js"></script>
+</body>
+
+
+</html>
