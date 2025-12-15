@@ -58,11 +58,10 @@ hr {
 
 /* 하이퍼링크 기본 색상 */
 a:link {
-    color: #1162a8; /* 방문하지 않은 링크 */
+    color: #343dc5; /* 방문하지 않은 링크 */
 }
-
 a:visited {
-    color: #343dc5; /* 방문했던 링크. */
+    color: #7b29c7; /* 방문했던 링크. */
 }
 
 /* 기본 스타일 및 폰트 설정 */
@@ -327,7 +326,7 @@ body {
 
 
 
-/* =============== 테이블 관련 클래스 =============== */
+/* =============== 지도 테이블 관련 클래스 =============== */
 /* 지도 테이블 전체를 감싸는 컨테이너 */
 .map-table-container { 
     background-color: #ffffff;
@@ -373,17 +372,19 @@ body {
 /* 테이블 스타일 */
 .route-table {
     width: 100%;
+    border: 1px solid #ccc;
     border-collapse: collapse;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.route-table th, .route-table td {
-    border: 1px solid #ccc;
-    padding: 6px;
-    text-align: center;
-}
 .route-table th {
     background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.route-table th, .route-table td {
+    padding: 6px;
+    height: 32px;
     text-align: center;
 }
 
