@@ -4,141 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SheerHeart</title>
+    <title>Pokedex</title>
     <!-- 스타일css -->
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        .container{
-            max-width: 800px;
-            width:95%;
-            margin: 0 auto;
-        }
-        .section {
-            background: white;
-            border: 2px solid #4b85db;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .section-header {
-            background: #4b85db;
-            color: white;
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .section-content {
-            background: white;
-        }
-
-        .section-content table {
-            width: 100%;
-            table-layout: fixed;
-        }
-
-        .list-table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        .list-table th {
-            background: #4b85db;
-            color: white;
-            font-weight: bold;
-            padding: 14px 10px;
-            font-size: 15px;
-            text-align: center;
-            border-bottom: 2px solid #4b85db;
-        }
-        
-        .list-table td{
-            border-bottom: 1px solid #d3d3d3;
-            padding: 14px 10px;
-            font-size: 15px;
-            text-align: center;
-            vertical-align: middle;
-        }
-        .list-table th {
-            background: #4b85db;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .list-table th:nth-child(1),
-        .list-table td:nth-child(1) {
-            width: 12%;
-        }  
-
-        .list-table th:nth-child(2),
-        .list-table td:nth-child(2) {
-            width: 33%;
-        }          
-
-        .list-table th:nth-child(3),
-        .list-table td:nth-child(3) {
-            width: 55%;
-        }   
-
-        .list-table .pokemon-cell {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .list-table .pokemon-cell img {
-            width: 70px;
-            height: 70px;
-        }
-
-        .poke-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .poke-link:hover {
-            text-decoration: underline; /* 또는 color 변경 */
-        }
-
-        .type-badge {
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            color: white;
-            display: inline-block;
-        }
-
-        .type-normal { background: #A8A878; }
-        .type-dragon { background: #7038F8; }
-        .type-fairy { background: #EE99AC; }
-        .type-steel { background: #B8B8D0; }
-        .type-fighting { background: #C03028; }
-        .type-ghost { background: #705898; }
-        .type-ground { background: #E0C068; }
-        .type-rock { background: #B8A038; }
-        .type-dark { background: #705848; }
-        .type-bug { background: #A8B820; }
-        .type-fire { background: #F08030; }
-        .type-water { background: #6890F0; }
-        .type-grass { background: #78C850; }
-        .type-electric { background: #F8D030; }
-        .type-psychic { background: #F85888; }
-        .type-ice { background: #98D8D8; }
-        .type-poison { background: #A040A0; }
-        .type-flying { background: #A890F0; }
-
-        .type-badge-small {
-            display: inline-block;
-            padding: 3px 10px;
-            margin: 0 2px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-weight: bold;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/pokedex.css">
 </head>
 
 <body>
@@ -152,220 +21,285 @@
         <div id="menu" class="sidebar">
             <p>메뉴 로드 중...</p>
         </div>
+
         <!--도감-->
         <div id="main">
             <h1>이데아의 포켓몬</h1>
-            <div class="container">
-                <!--목록세션-->
-                <div class="section">
-                    <div class="section-header">도감목록</div>
-                    <div class="section-content" style="padding: 0;">
-                        <table class="list-table">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>포켓몬</th><!--하이퍼링크-->
-                                    <th>타입</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>0043</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/뚜벅쵸.png" alt="뚜벅쵸">
-                                            <a href="./뚜벅쵸.html" class="poke-link">뚜벅쵸</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-grass">풀</span>
-                                        <span class="type-badge-small type-ice">얼음</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0044</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/냄새꼬.png" alt="냄새꼬">
-                                            <a href="./뚜벅쵸.html" class="poke-link">냄새꼬</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-grass">풀</span>
-                                        <span class="type-badge-small type-ice">얼음</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0479</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/가챠로톰.png" alt="로토무">
-                                            <a href="./로토무.html" class="poke-link">로토무</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-electric">전기</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0517</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/몽나.png" alt="몽나">
-                                            <a href="./몽얌나.html" class="poke-link">몽나</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-psychic">에스퍼</span>
-                                        <span class="type-badge-small type-poison">독</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0518</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/몽얌나.png" alt="몽얌나">
-                                            <a href="./몽얌나.html" class="poke-link">몽얌나</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-psychic">에스퍼</span>
-                                        <span class="type-badge-small type-poison">독</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0540</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/두르보_이데아폼.png" alt="두르보">
-                                            <a href="./두르보.html" class="poke-link">두르보</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-bug">벌레</span>
-                                        <span class="type-badge-small type-fairy">페어리</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0541</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/두르쿤_이데아폼.png" alt="두르쿤">
-                                            <a href="./pokemon/두르보.html" class="poke-link">두르쿤</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-bug">벌레</span>
-                                        <span class="type-badge-small type-fairy">페어리</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0542</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/모아머_이데아폼.png" alt="모아머">
-                                            <a href="./모아머.html" class="poke-link">모아머</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-bug">벌레</span>
-                                        <span class="type-badge-small type-fairy">페어리</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>0561</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/심보러1.png" alt="심보러">
-                                            <a href="./심보러.html" class="poke-link">심보러</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-psychic">에스퍼</span>
-                                        <span class="type-badge-small type-ghost">고스트</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2025</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/와인데스_병입한모습.png" alt="와인데스와">
-                                            <a href="./와인데스와.html" class="poke-link">와인데스와</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-water">물</span>
-                                        <span class="type-badge-small type-ghost">고스트</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2026</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/포트와인데스_일년.png" alt="포트와인데스">
-                                            <a href="./포트와인데스.html" class="poke-link">포트와인데스</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-water">물</span>
-                                        <span class="type-badge-small type-ghost">고스트</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2027</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/반죽냥.png" alt="반죽냥">
-                                            <a href="./반죽냥.html" class="poke-link">반죽냥</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-normal">노멀</span>
-                                        <span class="type-badge-small type-fairy">페어리</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2028</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/머핀펠린.png" alt="머핀펠린">
-                                            <a href="./머핀펠린.html" class="poke-link">머핀펠린</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-fire">불꽃</span>
-                                        <span class="type-badge-small type-fairy">페어리</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2029</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/다타르트.png" alt="다타르트">
-                                            <a href="./다타르트.html" class="poke-link">다타르트</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-fire">불꽃</span>
-                                        <span class="type-badge-small type-dark">악</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2031</td>
-                                    <td>
-                                        <div class="pokemon-cell">
-                                            <img src="./images/마갈르치_마른모습.png" alt="마갈르치">
-                                            <a href="./마갈르치.html" class="poke-link">마갈르치</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="type-badge-small type-rock">바위</span>
-                                        <span class="type-badge-small type-dark">악</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <!--목록-->
+            <div class="pd-section">
+                <div class="pd-section-content">
+                    <table class="pd-table">
+
+                        <colgroup>
+                            <col style="width: 12%;">
+                            <col style="width: 26%;">
+                            <col style="width: 30%;">
+                            <col style="width: 32%;">
+                        </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th colspan="4">도감 목록</th>
+                            </tr>
+                            <tr>
+                                <th>No.</th>
+                                <th colspan="2">포켓몬</th><!--이미지+이름 하이퍼링크-->
+                                <th>타입</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr> <!--뚜벅쵸-->
+                                <td>0043</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0043">
+                                        <img src="./images/0043.png" alt="뚜벅쵸">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0043">뚜벅쵸<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-grass">풀</span>
+                                    <span class="type-badge-small type-ice">얼음</span>
+                                </td>
+                            </tr>
+                            <tr> <!--냄새꼬-->
+                                <td>0044</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0043">
+                                        <img src="./images/0044.png" alt="냄새꼬">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0043">냄새꼬<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-grass">풀</span>
+                                    <span class="type-badge-small type-ice">얼음</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--밴딩로토무-->
+                                <td>0479</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0479">
+                                        <img src="./images/0479-1.png" alt="벤딩로토무">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0479">벤딩로토무</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-electric">전기</span>
+                                    <span class="type-badge-small type-steel">강철</span>
+                                </td>
+                            </tr>
+                            <tr> <!--가챠로토무-->
+                                <td>0479</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0479">
+                                        <img src="./images/0479-2.png" alt="가챠로토무">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0479">가챠로토무</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-electric">전기</span>
+                                    <span class="type-badge-small type-fairy">페어리</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--몽나-->
+                                <td>0517</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0517">
+                                        <img src="./images/0517.png" alt="몽나">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0517">몽나<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-psychic">에스퍼</span>
+                                    <span class="type-badge-small type-poison">독</span>
+                                </td>
+                            </tr>
+                            <tr> <!--몽얌나-->
+                                <td>0518</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0517">
+                                        <img src="./images/0518.png" alt="몽얌나">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0517">몽얌나<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-psychic">에스퍼</span>
+                                    <span class="type-badge-small type-poison">독</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--두르보-->
+                                <td>0540</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0540">
+                                        <img src="./images/0540.png" alt="두르보">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0540">두르보<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-bug">벌레</span>
+                                    <span class="type-badge-small type-fairy">페어리</span>
+                                </td>
+                            </tr>
+                            <tr> <!--두르쿤-->
+                                <td>0541</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0540">
+                                        <img src="./images/0541.png" alt="두르쿤">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0540">두르쿤<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-bug">벌레</span>
+                                    <span class="type-badge-small type-fairy">페어리</span>
+                                </td>
+                            </tr>
+                            <tr> <!--모아머-->
+                                <td>0542</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0542">
+                                        <img src="./images/0542.png" alt="모아머">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0542">모아머<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-bug">벌레</span>
+                                    <span class="type-badge-small type-fairy">페어리</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--심보러-->
+                                <td>0561</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=0561">
+                                        <img src="./images/0561-1.png" alt="심보러_토템">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=0542">심보러<br>(이데아의 모습)</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-psychic">에스퍼</span>
+                                    <span class="type-badge-small type-ghost">고스트</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--와인데스와-->
+                                <td>2025</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=2025">
+                                        <img src="./images/2025-1.png" alt="와인데스와_병입">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=2025">와인데스와</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-water">물</span>
+                                    <span class="type-badge-small type-ghost">고스트</span>
+                                </td>
+                            </tr>
+                            <tr> <!--포트와인데스-->
+                                <td>2026</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=2025">
+                                        <img src="./images/2026-1.png" alt="포트와인데스_일년">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=2025">포트와인데스</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-water">물</span>
+                                    <span class="type-badge-small type-ghost">고스트</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--반죽냥-->
+                                <td>2027</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=2027">
+                                        <img src="./images/2027.png" alt="반죽냥">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=2027">반죽냥</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-normal">노말</span>
+                                    <span class="type-badge-small type-fairy">페어리</span>
+                                </td>
+                            </tr>
+                            <tr> <!--머핀펠린-->
+                                <td>2028</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=2028">
+                                        <img src="./images/2028.png" alt="머핀펠린">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=2028">머핀펠린</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-fire">불꽃</span>
+                                    <span class="type-badge-small type-fairy">페어리</span>
+                                </td>
+                            </tr>
+                            <tr> <!--다타르트-->
+                                <td>2029</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=2029">
+                                        <img src="./images/2029.png" alt="다타르트">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=2029">다타르트</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-fire">불꽃</span>
+                                    <span class="type-badge-small type-dark">악</span>
+                                </td>
+                            </tr>
+
+                            <tr> <!--마갈르치-->
+                                <td>2031</td>
+                                <td class="pd-table-img">
+                                    <a href="pokedex-detail.html?name=2031">
+                                        <img src="./images/2031-1.png" alt="마갈르치">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="pokedex-detail.html?name=2031">마갈르치</a>
+                                </td>
+                                <td>
+                                    <span class="type-badge-small type-rock">바위</span>
+                                    <span class="type-badge-small type-dark">악</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>

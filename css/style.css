@@ -59,9 +59,15 @@ hr {
 /* 하이퍼링크 기본 색상 */
 a:link {
     color: #343dc5; /* 방문하지 않은 링크 */
+    text-decoration: none; /* 밑줄 제거 */
 }
 a:visited {
-    color: #7b29c7; /* 방문했던 링크. */
+    color: #7b29c7; /* 방문했던 링크 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+a:hover {
+    color: #4b85db;
+    text-decoration: underline; /* 밑줄 생성 */
 }
 
 /* 기본 스타일 및 폰트 설정 */

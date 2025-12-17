@@ -29,7 +29,6 @@ function highlightActiveMenu() {
     });
 }
 
-
 // 외부 파일 (menu-sidebar.html)을 불러와 #menu 영역에 삽입
 function loadSidebarMenu() {
     const menuContainer = document.getElementById('menu');
@@ -108,6 +107,7 @@ function loadDetailContent() {
 }
 
 
+
 // ====================================================================
 // mapN.html 또는 mapN-detail.html에서 해당 맵의 테이블을 불러옴
 // ====================================================================
@@ -156,22 +156,67 @@ function loadMapTable() {
 
 
 // ====================================================================
+// pokedex-detail.html에서 해당 포켓몬의 상세 정보를 불러옴
+// ====================================================================
+function loadPokemonDetail() {
+    const detailContainer = document.getElementById('pokemon-detail-placeholder');
+    if (!detailContainer) return;
+
+    // URL에서 포켓몬 이름 추출 (?name=뚜벅쵸 -> 뚜벅쵸)
+    const urlParams = new URLSearchParams(window.location.search);
+    const pokemonName = urlParams.get('name');
+
+    if (!pokemonName) {
+        detailContainer.innerHTML = `<p>포켓몬 정보가 지정되지 않았습니다.</p>`;
+        return;
+    }
+
+    // 경로 지정 (폴더: details-pokemon / 파일: 포켓몬명.html)
+    const detailFilePath = `details-pokemon/${pokemonName}.html`;
+
+    detailContainer.innerHTML = `<p>${pokemonName} 정보를 불러오는 중입니다...</p>`;
+
+    fetch(detailFilePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`${pokemonName} 상세 파일을 찾을 수 없습니다.`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            detailContainer.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Pokemon detail loading failed:', error);
+            detailContainer.innerHTML = `<p style="color: red;">정보를 불러오는 데 실패했습니다. (파일명: ${pokemonName}.html)</p>`;
+        });
+}
+
+
+
+// ====================================================================
 // 이벤트 등록 및 실행
 // ====================================================================
 window.onload = function() {
-    loadSidebarMenu(); // 메뉴 로드 (모든 페이지에서 실행)
+    // 1. 메뉴 로드 (모든 페이지 공통)
+    loadSidebarMenu(); 
 
-    // 맵 테이블 로드가 필요한 페이지인지 확인 후 실행
+    // 2. 맵 테이블 로드가 필요한 페이지인지 확인 (mapN.html 등)
     if (document.getElementById('map-table-placeholder')) {
         loadMapTable(); 
     }
 
-    // 상세 로드 기능을 가진 페이지인지 확인 후 설정
+    // 3. 포켓몬 상세 정보 로드가 필요한 페이지인지 확인 (pokedex-detail.html) ID는 'pokemon-detail-placeholder' 기준
+    if (document.getElementById('pokemon-detail-placeholder')) {
+        loadPokemonDetail();
+    }
+
+    // 4. 기타 상세 로드 기능을 가진 페이지인지 확인
     if (document.getElementById('detail-content-area')) {
-        // 페이지 로드 시 상세 내용 로드
+        // 페이지 처음 로드 시 실행
         loadDetailContent();
         
-        // 해시 변경 시 상세 내용 및 메뉴 활성화 재실행
+        // 해시(#) 변경 시 상세 내용 및 메뉴 활성화 재실행
         window.onhashchange = function() {
              loadDetailContent();
              highlightActiveMenu();

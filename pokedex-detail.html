@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex-detail</title>
+    <!-- 스타일css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pokedex.css">
+</head>
+
+<body>
+    <div id="titlelogo">PelipperMail</div>
+
+    <div id="content-wrapper">
+
+        <!-- 메뉴 토글 버튼(데스크톱 모드에서는 비활성) -->
+        <button id="menu-toggle" class="hidden">&#9776;</button>
+
+        <div id="menu" class="sidebar">
+            <p>메뉴 로드 중...</p>
+        </div>
+
+        <div id="main">
+            <h1><a href="pokedex-main.html">이데아의 포켓몬</a></h1>
+            <div class="pd-section">
+                <div class="pdd-section-content">
+                    <!-- 포켓몬 디테일 파일 로딩 영역 -->
+                    <div id="pokemon-detail-placeholder">
+                        <p id="loading-message">상세 정보를 불러오는 중입니다...</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/sidemenu.js"></script>
+    <script src="./js/loader.js"></script>
+</body>
+
+</html>
