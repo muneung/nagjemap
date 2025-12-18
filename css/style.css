@@ -463,6 +463,21 @@ body {
     display: block;
 }
 
+/* =============== 오디오 스타일 =============== */
+.audio-area-header {
+    width: 60%;
+    flex-shrink: 0;
+}
+.audio-area-header .audio-placeholder {
+    display: flex;
+    align-items: center;
+    height: 60px; /* 제목 높이에 맞춰 슬림하게 설정 */
+}
+.custom-audio-player {
+    width: 100%;
+    height: 40px; /* 오디오 바 두께 */
+}
+
 
 
 /* =============== 이미지 =============== */
