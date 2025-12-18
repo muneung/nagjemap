@@ -464,9 +464,26 @@ body {
 }
 
 /* =============== 오디오 스타일 =============== */
+/* 제목(h4)과 유튜브 영역을 가로로 배치하는 컨테이너 */
+.header-and-audio {
+    display: flex;             /* 가로 배치 */
+    justify-content: space-between; /* 제목은 왼쪽, 재생바는 오른쪽 끝으로 배치 */
+    align-items: flex-start;   /* 항목들을 위쪽 정렬 */
+    margin-bottom: 10px;       /* 하단 간격 */
+    align-items: center;
+    gap: 20px; /* 제목과 오디오 사이의 최소 간격 추가 */
+}
+.header-and-audio h4 {
+    /* 기본 상하 마진을 제거하여 정렬을 깔끔하게 */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    flex-shrink: 0; /* 제목이 길어져도 재생바 영향 없도록 보호 */
+    white-space: nowrap; /* 제목이 길어도 줄바꿈 되지 않게 설정 */
+}
 .audio-area-header {
-    width: 60%;
-    flex-shrink: 0;
+    flex: 1; /* 남은 모든 공간을 오디오 영역이 차지함 */
+    min-width: 150px; /* 오디오가 너무 작아지지 않도록 최소 너비 설정 */
 }
 .audio-area-header .audio-placeholder {
     display: flex;
