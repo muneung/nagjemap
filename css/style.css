@@ -422,6 +422,7 @@ body {
     border: 1px solid #ccc;
     padding: 6px;
     text-align: center;
+    word-break: keep-all;
 }
 .pokemon-spawn-table th {
     background-color: #f0f0f0;
@@ -570,59 +571,6 @@ img {
     width: 100%;           /* 부모(60% 너비)를 꽉 채움 */
 }
 
-/* 애매한 너비 대응 (음량 슬라이더가 빠지며 재생바가 늘어나는 지점) */
-@media (max-width: 1100px) {
-    /* 슬라이더 제거 */
-    .vol-bar {
-        display: none !important;
-    }
-    /* 음량 그룹을 아이콘 크기에 딱 맞게 축소하여 여백을 완전히 제거 */
-    .volume-group {
-        flex: 0 0 auto !important; /* 고정 너비 해제, 아이콘 크기만큼만 차지 */
-        width: auto !important;
-        max-width: none;
-        gap: 0;                   /* 슬라이더와 아이콘 사이 간격 제거 */
-        margin: 0;
-    }
-    /* 재생바가 남은 모든 공간을 100% 흡수하도록 강제 */
-    .seek-bar {
-        flex: 1 1 auto !important; /* 빈 공간을 무조건 채움 */
-        display: block;
-    }
-    /* 컨트롤러 내부 요소 간격도 미세하게 조정하여 밀착 */
-    .main-controls {
-        gap: 8px;
-    }
-}
-
-/* 모바일 대응 (전체 너비 확장 및 더보기 버튼 보호) */
-@media (max-width: 768px) {
-    .header-and-audio {
-        gap: 20px;
-        flex-wrap: nowrap; /* 아래로 떨어지지 않게 고정 */
-    }
-    .audio-area-header {
-        flex: 1;           /* 60% 제한을 풀고 제목 옆 빈 공간을 모두 오디오에 할당 */
-        max-width: none;
-    }
-    .custom-player-wrapper {
-        padding: 0 8px;    /* 내부 패딩을 줄여 더보기 버튼이 밖으로 안 나가게 보호 */
-        width: 100% !important;
-    }
-    .main-controls {
-        gap: 6px;          /* 요소 간격을 더 줄여 재생바 길이 극대화 */
-    }
-    /* 모바일에서 음소거 버튼(아이콘)은 항상 유지 */
-    .volume-group {
-        display: flex !important;
-        flex: 0 0 auto !important;
-    }
-    /* 더보기 버튼이 절대 밖으로 안 밀려나게 */
-    .more-menu {
-        flex: 0 0 20px;
-    }
-}
-
 /* =============== 플레이어 내부 디자인 =============== */
 .custom-player-wrapper {
     display: flex;
@@ -650,7 +598,7 @@ img {
     display: flex;
     align-items: flex-start;  /* 중앙(center)이 아닌 상단 기준으로 먼저 정렬 */
     width: 100%;
-    gap: 12px;
+    gap: 18px;
     min-height: 48px;        /* 플레이어 높이 확보 */
     padding-top: 8px;        /* 상단 여백 살짝 추가 */
 }
@@ -881,6 +829,84 @@ img {
     font-family: inherit; /* 부모 폰트 상속 */
     font-size: 0.7rem;
     background: #fff;
+}
+
+/* 애매한 너비 대응 (음량 슬라이더가 빠지며 재생바가 늘어나는 지점) */
+@media (max-width: 1100px) {
+    /* 음량 슬라이더 제거 */
+    .custom-player-wrapper .vol-bar {
+        display: none;
+    }
+    .custom-player-wrapper .main-controls {
+        display: flex;
+        align-items: center; /* 중앙 정렬 해제, 상단 기준 */
+        gap: 0;
+        width: 100%;
+    }
+    /* 재생바 영역: 상단 정렬 유지하면서 버튼들과 수평 맞춤 */
+    .custom-player-wrapper .seek-area {
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0 12px;
+        display: flex;
+        flex-direction: column;
+    }
+    /* 고정 요소들: 수축 방지 및 마진 정리 */
+    .custom-player-wrapper .play-btn,
+    .custom-player-wrapper .volume-group,
+    .custom-player-wrapper .more-menu {
+        flex: 0 0 auto;
+        margin-top: -8px;
+    }
+}
+
+/* 모바일 대응 (전체 너비 확장 및 더보기 버튼 보호) */
+@media (max-width: 768px) {
+    /* 상위 컨테이너: 제목과 오디오 정렬 */
+    .header-and-audio {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: nowrap;
+    }
+    .audio-area-header {
+        flex: 1;
+        min-width: 0;
+        max-width: none;
+    }
+    /* 플레이어 내부 컨트롤러: 버튼 사이 크기 조절 */
+    .custom-player-wrapper .main-controls {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
+    /* 재생바가 공간 부족 시 가장 먼저 줄어듦 */
+    .custom-player-wrapper .seek-area {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+    /* 고정 요소들: 수축 방지 및 마진 정리 */
+    .custom-player-wrapper .play-btn,
+    .custom-player-wrapper .volume-group,
+    .custom-player-wrapper .more-menu {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+    /* 재생바와 시간 영역 전체를 양옆 버튼으로부터 떼어놓음 */
+    .custom-player-wrapper .seek-area {
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0 10px; /* 좌우에 10px씩 여유 공간 부여 */
+        display: flex;
+        flex-direction: column;
+    }
+    /* 시간 텍스트가 재생바와 너무 붙어있다면 상단 마진 추가 */
+    .custom-player-wrapper .time-row {
+        font-size: 0.65rem;
+    }
 }
 /* =============== 오디오 스타일 =============== */
 /* ============================================ */
