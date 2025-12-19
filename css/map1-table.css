@@ -360,3 +360,22 @@
     direction: ltr;
     padding: 2px 3px 2px 3px;
 }
+
+
+
+/* 모바일 환경 가독성 개선 */
+@media screen and (max-width: 768px) {
+    /* 테이블을 감싸는 컨테이너 설정 */
+    .map-table-container {
+        width: 100%;
+        overflow-x: auto; /* 축소해도 테이블이 화면보다 크면 스크롤이 필요함 */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 테이블 축소 */
+    .ritz.grid-container {
+        transform: scale(0.8); /* 크기 조정 */
+        transform-origin: top left; /* 왼쪽 상단 고정 */
+        margin-bottom: -180px; /* 축소 후 아래쪽에 남는 큰 여백을 제거 */
+    }
+}

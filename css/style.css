@@ -202,13 +202,13 @@ body {
 #menu-toggle {
     display: none; /* 데스크톱 모드에서 비활성 */
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     z-index: 100;
     
     /* 크기 및 디자인 */
-    padding: 12px 18px; /* 패딩을 키워서 버튼 크기 확대 */
-    font-size: 1.2rem; /* 폰트 크기 확대 */
+    padding: 8px 12px; /* 패딩을 키워서 버튼 크기 확대 */
+    font-size: 1rem; /* 폰트 크기 확대 */
     
     background-color: #f8f8f8;
     color: #4b85db;
@@ -364,7 +364,7 @@ body {
 }
 /* 테이블 폭을 필요한 만큼 최대로 확장 (스크롤 때문에) */
 .map-table-container table {
-    width: max-content; 
+    width: max-content;
     table-layout: fixed; 
     border-collapse: collapse; /* 테두리 겹침 x */
 }
@@ -465,7 +465,7 @@ img {
     /* 사이드바 메뉴를 모바일용으로 */
     #menu {
         /* 너비, 높이, 위치 설정 */
-        width: 250px;
+        width: 200px;
         height: 100vh;
         top: 0; /* 화면 최상단에서 시작 */
         left: 0;
@@ -475,9 +475,10 @@ img {
         z-index: 50;
         background-color: #f8f8f8; /* 배경색 유지 */
         /* 메뉴 내용을 버튼 아래로 밀어내기 위해 패딩 설정 */
-        padding-top: 80px; /* 버튼이 고정된 영역만큼 조정 */
+        padding-top: 60px; /* 버튼이 고정된 영역만큼 조정 */
         transition: transform 0.3s ease-in-out;
         overflow-y: auto;
+        font-size: 0.8rem
     }
     #menu ul {
         gap: 0;
@@ -488,6 +489,10 @@ img {
     }
     #main {
         padding: 20px;
+    }
+    /* 모바일 메뉴 폰트 사이즈 강제 상속 */
+    #menu * {
+        font-size: inherit !important;
     }
 }
 
