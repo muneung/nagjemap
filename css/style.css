@@ -191,7 +191,6 @@ body {
 
 /* 이데아도감 <span>을 <a> 태그와 동일하게 조정(메뉴 간격 통일 때문에) */
 .menu-root > .menu-link-like {
-    color: #333;
     display: block; /* <a>와 같은 블록 속성 부여 */
     padding: 10px 15px; /* <a>와 같은 패딩 부여 */
     border-radius: 4px;
@@ -299,16 +298,11 @@ body {
     font-size: 0.85rem;
 }
 /* 타운맵 디테일 시설 레이아웃 */
-.facility-guide {
-    width: 100%; /* 가로 전체 너비 */
-    background-color: #f0f0f0; 
-    border-radius: 4px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.facility-guide { /* 시설 목록 감싸는 블록, 투명하게 바꿈 */
+    width: fit-content;
+    background-color: transparent; 
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 .facility-guide ul {
     list-style: none; /* 리스트 점 제거 */
@@ -319,26 +313,64 @@ body {
     flex-wrap: wrap;       /* 블록 너비를 넘으면 자동으로 다음 줄로 넘어가도록 설정 */
     gap: 10px;              /* 항목과 항목 사이의 간격은 10px */
 }
-.facility-guide li {
+.facility-guide li { /* 시설 항목 토글 버튼 */
+    color: #4b85db;
     background-color: #ffffff; /* 항목 배경색 (흰색으로 눈에 띄게) */
-    border: 1px solid #c9c9c9; /* 항목 경계선 */
+    border: 1px solid #ccc; /* 항목 경계선 */
     border-radius: 4px;        /* 둥근 모서리 */ 
     padding: 4px 10px; /* 항목 내부 여백 */
     font-weight: bold;  
-    color: #333;
     white-space: nowrap; /* 항목 글자가 줄 바꿈되는 것 방지 */
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
-.facility-paragraph {
-    text-align: justify;       /* 양쪽 정렬 */
+.facility-guide li.active { /* 선택된 토글 */
+    background-color: #eef5ff !important;
+    border-color: #4b85db !important;
+    color: #3a6bbd !important;
+    box-shadow: inset 0 0 4px rgba(75, 133, 219, 0.2);
 }
+/* 설명창 나타날 때 전환 */
+.fac-content {
+    animation: fadeIn 0.3s ease-out;
+    margin-top: 15px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* 시설 설명 탭 */
+/* 상단 부분 */
 .facility-tag {
-    display: inline-block; /* 제목만 단어 블록으로 만듦 */
+    display: inline-block;
     background-color: #ffffff;
     border: 1px solid #c9c9c9;
-    border-radius: 4px;
-    padding: 0px 10px;      /* 좌우 여백으로 단어 감싸기 */
-    margin-right: 5px;     /* 뒤에 오는 본문과의 간격 */
-    vertical-align: middle; /* 텍스트 중앙 정렬 유지 */
+    border-bottom: none; /* 아래쪽 선을 없애서 하단 박스와 연결된 느낌 부여 */
+    border-radius: 6px 6px 0 0; /* 위쪽만 둥글게 */
+    padding: 6px 16px 2px 16px;
+    margin-bottom: -1px; /* 하단 박스 테두리와 겹치게 하여 연결 부위를 깔끔하게 */
+    
+    font-size: 0.8rem;
+    font-weight: bold;
+    
+    position: relative; /* z-index 조절을 위해 */
+    z-index: 2; /* 하단 박스 선보다 위로 올라오게 */
+}
+/* 하단 설명 박스 */
+.facility-description {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 0 6px 6px 6px; /* 왼쪽 위만 각지게 (탭과 연결부위) */
+    padding: 16px;
+    font-size: 0.75rem;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+    text-align: justify;       /* 양쪽 정렬 */
+}
+/* 두 요소를 감싸는 컨테이너 */
+.facility-package {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -420,9 +452,10 @@ body {
 }
 .pokemon-spawn-table th, .pokemon-spawn-table td {
     border: 1px solid #ccc;
-    padding: 6px;
+    padding: 10px;
     text-align: center;
-    word-break: keep-all;
+    word-break: keep-all;      /* 단어 단위 줄바꿈 */
+    overflow-wrap: break-word; /* 너무 긴 단어는 강제로 줄바꿈하여 레이아웃 깨짐 방지 */
 }
 .pokemon-spawn-table th {
     background-color: #f0f0f0;
