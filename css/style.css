@@ -372,7 +372,34 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+/* 시설 설명 탭 summary(메뉴판 등 표시할 때 쓴 접은글) */
+.fac-content summary { /* 기본 화살표 숨기고 따로 설정해서 쓸 것 */
+    list-style: none;
+    display: flex;         /* 중앙 정렬을 위해 flex 사용 */
+    align-items: center;   /* 수직 중앙 정렬 */
+    cursor: pointer;
+    padding: 0;
+}
+.fac-content summary::-webkit-details-marker {
+    display: none;         /* 사파리/구형 크롬 화살표 숨기기 */
+}
+/* 만든 화살표(직접 조절 가능) */
+.fac-content summary::before {
+    content: '▶';          /* 원하는 화살표 모양 */
+    font-size: 0.75rem;      /* 화살표 크기 조절 */
+    margin-right: 10px;     /* 화살표와 제목 글자 사이 간격 */
+    transition: transform 0.2s; /* 회전 애니메이션 효과 */
+    opacity: 0.4; /* 0(완전 투명) ~ 1(불투명) 사이 값 */
+}
+/* 펼쳐졌을 때 화살표 회전 */
+.fac-content details[open] summary::before {
+    transform: rotate(90deg); /* 아래를 향하도록 90도 회전 */
+}
+/* 리스트 마커 크기랑 투명도*/
+.fac-content li::marker {
+    font-size: 0.75em;
+    color: #00000080;
+}
 
 
 /* =============== 지도 테이블 관련 클래스 =============== */
