@@ -67,16 +67,33 @@
         해풍의 짠기와 꽃내음의 조화가 느껴집니다.
         칠색의 산호가 더 선명히 반짝이는 모습을 한눈에 담을 수 있다는 것 또한 장점이지요.
         <br><br>
-        한때는, 연안 마을에서 곧장 산호 시티로 가는 길이 있었습니다.
+        한때는 연안 마을에서 곧장 산호 시티로 가는 길이 있었습니다.
         하지만 낙석 사고가 자주 일어나는 탓에 해당 도로는 폐쇄되었습니다.
         뭐, 갈 곳은 산호시티 뿐이 아니니, 괜찮지 않겠습니까?
     </p>
 
+    <!-- 시설 -->
     <div class="facility-guide">
         <ul>
-            <li>포켓몬센터</li>
-            <li>프렌들리숍</li>
+            <li class="fac-trigger" data-target="coastalvillage-fac01">포켓몬센터</li>
+            <li class="fac-trigger" data-target="coastalvillage-fac02">프렌들리숍</li>
         </ul>
+    </div>
+
+    <div id="coastalvillage-fac01" class="facility-package fac-content" style="display: none;">
+        <div class="facility-tag">포켓몬센터</div>
+        <div class="facility-description">
+            포켓몬을 완벽하게 회복시켜 주는 시설이자, 지친 트레이너가 가볍게 머물며 쉬어갈 수 있는 쉼터입니다.
+            언제나 무료로 개방되어 있습니다. 여행 중 지친 몸과 마음을 정비하기에 가장 좋은 장소입니다.
+        </div>
+    </div>
+
+    <div id="coastalvillage-fac02" class="facility-package fac-content" style="display: none;">
+        <div class="facility-tag">프렌들리숍</div>
+        <div class="facility-description">
+            몬스터볼과 상처약 등 모험에 꼭 필요한 다양한 도구들을 판매하는 상점입니다.
+            새로운 장소로 떠나기 전, 가방 속에 부족한 물자가 없는지 미리 확인해 보세요.
+        </div>
     </div>
 
     <!--아이템-->
@@ -95,10 +112,10 @@
                 <td>
                     예리한손톱
                 </td>
-                <td>
+                <td style="text-align: left;">
                     어느 가정집에서 발견할 수 있습니다.
-                    21번 도로의 쟝고가 경쟁에서 밀려난 흔적인 듯 합니다.<br>
-                    하지만, 이것을 얻기 위해서는 "도둑질"을 하거나...
+                    21번 도로의 쟝고가 경쟁에서 밀려난 흔적인 듯 합니다.
+                    하지만, 이것을 얻기 위해서는 "도둑질"을 하거나···
                     이것을 소중히 여기는 아이를 설득할 필요가 있을 것 같습니다.
                 </td>
             </tr>

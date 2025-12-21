@@ -280,7 +280,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 /* 타운맵 디테일 */
@@ -295,7 +295,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 /* 타운맵 디테일 시설 레이아웃 */
 .facility-guide { /* 시설 목록 감싸는 블록, 투명하게 바꿈 */
