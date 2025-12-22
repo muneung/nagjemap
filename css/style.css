@@ -476,6 +476,7 @@ body {
     border-collapse: collapse;
     margin-top: 12px;
     margin-bottom: 12px;
+    font-size: 0.75rem;
 }
 .pokemon-spawn-table th, .pokemon-spawn-table td {
     border: 1px solid #ccc;
