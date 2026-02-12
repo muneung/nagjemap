@@ -1,0 +1,1066 @@
+/* 박스 모델 계산 방식 변경(전역 설정)(패딩 보더를 길이 계산에 넣음) */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*폰트 선언*/
+@font-face {
+    font-family: "Galmuri14";
+    src: url('../fonts/Galmuri14.woff2') format('woff2');
+    font-weight: normal; 
+    font-style: normal;
+}
+@font-face {
+    font-family: "DungGeunMo";
+    src: url('../fonts/DungGeunMo.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =============== 텍스트 강조 =============== */
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-red {
+    color: #a7203d;
+    font-weight: bold;
+}
+.text-blue {
+    color: #0765b8;
+    font-weight: bold;
+}
+.text-yellow {
+    color: #c5a40f;
+    font-weight: bold;
+}
+.text-green {
+    color: #1b7a26;
+    font-weight: bold;
+}
+.text-pink {
+    color: #da6eb4;
+    font-weight: bold;
+}
+.text-purple {
+    color: #7240ac;
+    font-weight: bold;
+}
+
+/* 구분선 */
+hr {
+    border: none; /* 브라우저 기본 테두리 제거 */
+    border-top: 2px solid #bcd9f1; /* 구분선 색 */
+    margin: 0px 0; /* 위아래 여백 설정 */
+    width: 100%; /* 너비*/
+}
+
+/* 하이퍼링크 기본 색상 */
+a:link {
+    color: #343dc5; /* 방문하지 않은 링크 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+a:visited {
+    color: #7b29c7; /* 방문했던 링크 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+a:hover {
+    color: #4b85db;
+    text-decoration: underline; /* 밑줄 생성 */
+}
+
+/* 기본 스타일 및 폰트 설정 */
+body {
+    overflow-y: scroll; /* 세로 스크롤바를 항상 표시*/
+    font-family: "Galmuri14", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* 최상단 타이틀 */
+#titlelogo {
+    font-family: "DungGeunMo", Arial, sans-serif;
+    text-align: center;
+    padding: 28px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #4b85db; /* 타이틀 배경색 */
+    color: white;
+}
+
+/* 메인 컨테이너 (Flexbox 부모) */
+#content-wrapper {
+    display: flex;
+    max-width: 1440px; /* 최대 너비 제한 */
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    background-color: white; /* 메인 배경색 */
+}
+
+
+
+/* =============== 사이드바 메뉴 설정 =============== */
+
+/* 사이드바 메뉴 스타일 */
+#menu {
+    width: 240px; /* 사이드바 고정 너비 */
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #eee;
+    flex-shrink: 0; /* 너비 고정 */
+
+    /* 메뉴 내부 스크롤 */
+    height: 100vh; /* 뷰포트 높이만큼 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤바 생성 */
+    
+    position: sticky; 
+    top: 0; /* 스크롤 시 뷰포트 최상단에 고정 */
+}
+#menu h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid ;
+    color: #0b5394;
+}
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* 메인 메뉴 항목의 기본 간격 */
+#menu li {
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+/* 최상위 항목 간 여백 확보 (소식-타운맵, 타운맵-이데아도감 사이) */
+#menu .menu-root {
+    margin-bottom: 10px;
+}
+#menu .menu-item > ul {
+    margin-top: 2px; /* 상위 메뉴와 첫 서브 메뉴 사이 간격 */
+}
+#menu .menu-item > a {
+    margin-bottom: 0; /* 링크 아래 간격 제거 */
+}
+
+/* 서브 메뉴(중첩된 ul)*/
+#menu ul ul {
+    padding-left: 25px; /* 서브 메뉴 들여쓰기 */
+}
+#menu ul ul li {
+    margin-bottom: 2px; /* 서브 메뉴 항목 간격 */
+}
+#menu ul ul li a {
+    font-size: 0.9rem; /* 서브 메뉴 폰트 크기 축소 (16px 기준 14.4px) */ 
+    padding: 7px 15px; /* 서브 메뉴 패딩 조정 */
+}
+
+#menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+#menu a:hover {
+    background-color: #e0e0e0;
+}
+
+#sidebarnevi {
+    font-size: 1.1rem;
+    color: #214e91;
+    padding-bottom: 12px;
+    margin-top: 0; /* 불필요한 상단 마진 제거 */
+    margin-bottom: 2px; /* 메뉴와의 간격 확보 */
+    border-bottom: 2px solid #bbcbd8; /* 구분선 */
+    text-align: center;
+}
+
+/* 활성 페이지 표시 */
+.menu-item.active > a {
+    background-color: #cfe2f3; /* 활성 페이지 배경색 */
+    color: #0b5394;
+    font-weight: bold;
+}
+
+/* 이데아도감 <span>을 <a> 태그와 동일하게 조정(메뉴 간격 통일 때문에) */
+.menu-root > .menu-link-like {
+    display: block; /* <a>와 같은 블록 속성 부여 */
+    padding: 10px 15px; /* <a>와 같은 패딩 부여 */
+    border-radius: 4px;
+}
+
+
+/* 햄버거 메뉴 버튼 기본 스타일 */
+#menu-toggle {
+    display: none; /* 데스크톱 모드에서 비활성 */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    
+    /* 크기 및 디자인 */
+    padding: 8px 12px; /* 패딩을 키워서 버튼 크기 확대 */
+    font-size: 1rem; /* 폰트 크기 확대 */
+    
+    background-color: #f8f8f8;
+    color: #4b85db;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: "Galmuri14", Arial, sans-serif;
+}
+
+/* 모바일 메뉴 전환 스타일 */
+.sidebar.hidden {   /* 모바일에서 숨김 (JS로 작동) */
+    transform: translateX(-100%);
+}
+.sidebar.visible {  /* 모바일에서 보임 (JS로 작동) */
+    transform: translateX(0);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5); 
+}
+/* =============== 사이드바 메뉴 설정 =============== */
+
+
+
+/* 메인(게시글) 영역 스타일 */
+#main {
+    flex-grow: 1; /* 남은 공간 모두 채우기 */
+    padding: 40px;
+    line-height: 1.9; /* 행간 조정 */
+    letter-spacing: -0.2px;     /* 자간 조정 */
+    min-width: 0; /* 내부 요소 강제 확장 차단 */
+    overflow-x: hidden; /* #main의 경계를 넘는 콘텐츠를 숨기고 스크롤을 하위 요소에 위임 */
+}
+#main h1 {
+    font-size: 1.4rem;
+    margin-top: 0; /* 불필요한 상단 마진 제거 */
+    padding-bottom: 6px;
+    color: #0b5394;
+}
+#main h2 {
+    font-size: 1.2rem;
+    padding-bottom: 6px;
+}
+#main h3 {
+    font-size: 1rem;
+}
+#main p {
+    text-align: justify; /* 텍스트 가로폭 정리 */
+}
+
+
+
+/* =============== 클래스 =============== */
+/* 클래스 추가(블록형태) */
+.blog-post {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 타운맵 블록 기본 */
+.map-section {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 30px;    /* 블록 하단(사이) 간격) */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* 타운맵 디테일 */
+.map-detail-section {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 30px;    /* 블록 하단(사이) 간격) */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+/* 타운맵 디테일 시설 레이아웃 */
+.facility-guide { /* 시설 목록 감싸는 블록, 투명하게 바꿈 */
+    width: fit-content;
+    background-color: transparent; 
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+.facility-guide ul {
+    list-style: none; /* 리스트 점 제거 */
+    padding: 6px;       /* 기본 좌측 패딩 */
+    /* 가로 배열 및 자동 줄 바꿈 */
+    display: flex;         /* Flexbox 활성화 */
+    flex-direction: row;   /* 가로 배열 (기본값) */
+    flex-wrap: wrap;       /* 블록 너비를 넘으면 자동으로 다음 줄로 넘어가도록 설정 */
+    gap: 10px;              /* 항목과 항목 사이의 간격은 10px */
+}
+.facility-guide li { /* 시설 항목 토글 버튼 */
+    color: #4b85db;
+    background-color: #ffffff; /* 항목 배경색 (흰색으로 눈에 띄게) */
+    border: 1px solid #ccc; /* 항목 경계선 */
+    border-radius: 4px;        /* 둥근 모서리 */ 
+    padding: 4px 10px; /* 항목 내부 여백 */
+    font-weight: bold;  
+    white-space: nowrap; /* 항목 글자가 줄 바꿈되는 것 방지 */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.facility-guide li.active { /* 선택된 토글 */
+    background-color: #eef5ff !important;
+    border-color: #4b85db !important;
+    color: #3a6bbd !important;
+    box-shadow: inset 0 0 4px rgba(75, 133, 219, 0.2);
+}
+/* 설명창 나타날 때 전환 */
+.fac-content {
+    animation: fadeIn 0.3s ease-out;
+    margin-top: 15px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* 시설 설명 탭 */
+/* 상단 부분 */
+.facility-tag {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-bottom: none; /* 아래쪽 선을 없애서 하단 박스와 연결된 느낌 부여 */
+    border-radius: 6px 6px 0 0; /* 위쪽만 둥글게 */
+    padding: 6px 16px 2px 16px;
+    margin-bottom: -1px; /* 하단 박스 테두리와 겹치게 하여 연결 부위를 깔끔하게 */
+    
+    font-size: 0.8rem;
+    font-weight: bold;
+    
+    position: relative; /* z-index 조절을 위해 */
+    z-index: 2; /* 하단 박스 선보다 위로 올라오게 */
+}
+/* 하단 설명 박스 */
+.facility-description {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    border-radius: 0 6px 6px 6px; /* 왼쪽 위만 각지게 (탭과 연결부위) */
+    padding: 16px;
+    font-size: 0.75rem;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+    text-align: justify;       /* 양쪽 정렬 */
+}
+/* 두 요소를 감싸는 컨테이너 */
+.facility-package {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 시설 설명 탭 summary(메뉴판 등 표시할 때 쓴 접은글) */
+.fac-content summary { /* 기본 화살표 숨기고 따로 설정해서 쓸 것 */
+    list-style: none;
+    display: flex;         /* 중앙 정렬을 위해 flex 사용 */
+    align-items: center;   /* 수직 중앙 정렬 */
+    cursor: pointer;
+    padding: 0;
+}
+.fac-content summary::-webkit-details-marker {
+    display: none;         /* 사파리/구형 크롬 화살표 숨기기 */
+}
+/* 만든 화살표(직접 조절 가능) */
+.fac-content summary::before {
+    content: '▶';          /* 원하는 화살표 모양 */
+    font-size: 0.75rem;      /* 화살표 크기 조절 */
+    margin-right: 10px;     /* 화살표와 제목 글자 사이 간격 */
+    transition: transform 0.2s; /* 회전 애니메이션 효과 */
+    opacity: 0.4; /* 0(완전 투명) ~ 1(불투명) 사이 값 */
+}
+/* 펼쳐졌을 때 화살표 회전 */
+.fac-content details[open] summary::before {
+    transform: rotate(90deg); /* 아래를 향하도록 90도 회전 */
+}
+/* 리스트 마커 크기랑 투명도*/
+.fac-content li::marker {
+    font-size: 0.75em;
+    color: #00000080;
+}
+
+
+/* =============== 지도 테이블 관련 클래스 =============== */
+/* 지도 테이블 전체를 감싸는 컨테이너 */
+.map-table-container { 
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    max-height: 560px;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    line-height: 1.4;   /* 행간 조정 */
+    letter-spacing: -0.5px;     /* 자간 조정 */
+}
+/* 테이블 폭을 필요한 만큼 최대로 확장 (스크롤 때문에) */
+.map-table-container table {
+    width: max-content;
+    table-layout: fixed; 
+    border-collapse: collapse; /* 테두리 겹침 x */
+}
+/* 모든 테이블 셀에 고정 크기 (가로 80px, 세로 50px) 적용 */
+.map-table-container table td,
+.map-table-container table th {
+    width: 80px; 
+    height: 50px; 
+    white-space: nowrap; 
+    vertical-align: middle; 
+}
+/* 지도 테이블 하이퍼링크는 구분을 위해 밑줄 on */
+.map-table-container a {
+    text-decoration: underline;
+}
+
+
+
+/* =============== 도로 안내 테이블 레이아웃 =============== */
+.route-table-wrapper {
+    width: 100%;
+}
+
+/* 테이블 스타일 */
+.route-table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.route-table th {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.route-table th, .route-table td {
+    padding: 6px;
+    height: 32px;
+    text-align: center;
+}
+
+
+
+/* =============== 출현 포켓몬 테이블 레이아웃 =============== */
+/* 테이블 스타일 */
+.pokemon-spawn-table {
+    width: 100%;
+    table-layout: fixed; /* 너비 제어용 */
+    border-collapse: collapse;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 0.75rem;
+}
+.pokemon-spawn-table th, .pokemon-spawn-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    word-break: keep-all;      /* 단어 단위 줄바꿈 */
+    overflow-wrap: break-word; /* 너무 긴 단어는 강제로 줄바꿈하여 레이아웃 깨짐 방지 */
+}
+.pokemon-spawn-table th {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+
+
+/* =============== 이미지 =============== */
+/* 기본 이미지 스타일: 컨테이너를 벗어나지 않도록 */
+img {
+    max-width: 100%;
+    height: auto; /* 이미지 비율 유지 */
+    display: block; /* 블록 요소로 설정 */
+}
+
+/* 지도 이미지 설정*/
+.map-section img {
+    width: 100%;
+    margin: 10px auto; /* 위아래 10px, 중앙 정렬 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 이미지 그림자 */
+}
+
+
+
+/* =============== 반응형 =============== */
+
+/* 반응형 디자인: 화면이 좁아지면 사이드바를 숨기고 메뉴 출력 */
+@media (max-width: 768px) {
+    #content-wrapper {
+        flex-direction: column; /* 세로로 쌓기 */
+        margin: 0;
+        box-shadow: none;
+    }
+    /* 메뉴 버튼 상단에 고정 */
+    #menu-toggle {
+        display: block; 
+        z-index: 100; /* 사이드바보다 위에 있도록 */
+    }
+    /* 사이드바 메뉴를 모바일용으로 */
+    #menu {
+        /* 너비, 높이, 위치 설정 */
+        width: 200px;
+        height: 100vh;
+        top: 0; /* 화면 최상단에서 시작 */
+        left: 0;
+        position: fixed; 
+        left: 0;
+        top: 0;
+        z-index: 50;
+        background-color: #f8f8f8; /* 배경색 유지 */
+        /* 메뉴 내용을 버튼 아래로 밀어내기 위해 패딩 설정 */
+        padding-top: 60px; /* 버튼이 고정된 영역만큼 조정 */
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        font-size: 0.8rem
+    }
+    #menu ul {
+        gap: 0;
+        padding: 0;
+    }
+    #menu li {
+        text-align: left;
+    }
+    #main {
+        padding: 20px;
+    }
+    /* 모바일 메뉴 폰트 사이즈 강제 상속 */
+    #menu * {
+        font-size: inherit !important;
+    }
+}
+
+
+
+/* =============== 유튜브 레이아웃 =============== */
+/* 제목(h4)과 유튜브 영역을 가로로 배치하는 컨테이너 */
+.header-and-youtube {
+    display: flex;             /* 가로 배치 */
+    justify-content: space-between; /* 제목은 왼쪽, 유튜브는 오른쪽 끝으로 배치 */
+    align-items: flex-start;   /* 항목들을 위쪽 정렬 */
+    margin-bottom: 10px;       /* 하단 간격 */
+    align-items: center;
+}
+
+.header-and-youtube h4 {
+    /* 기본 상하 마진을 제거하여 정렬을 깔끔하게 */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* 상단 헤더에 위치하는 유튜브 영역 스타일 */
+.youtube-area-header {
+    width: 100%; 
+    max-width: 200px; /* 유튜브 전체 영역의 최대 너비를 240px로 고정 */
+    flex-shrink: 0; 
+}
+
+/* 플레이스홀더에 비율 적용 (16:9 비율 유지) */
+.youtube-area-header .video-placeholder {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* padding-bottom 값은 항상 '부모의 너비'를 기준으로 계산 */
+    height: 0; /* 본래 높이를 0으로 만들어 패딩으로만 높이를 결정 */
+    overflow: hidden; 
+    background-color: black;
+}
+
+/* iframe (유튜브 플레이어) 스타일 */
+.cropped-youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 부모 컨테이너가 패딩으로 확보한 공간을 채움 */
+    margin-top: 0 !important; 
+    display: block;
+}
+
+
+
+/* ============================================ */
+/* =============== 오디오 스타일 =============== */
+.header-and-audio {
+    display: flex;
+    justify-content: space-between; /* 제목은 왼쪽, 오디오는 오른쪽 */
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.header-and-audio h4 {
+    margin: 0;
+    flex: 0 0 auto;        /* 제목은 필요한 만큼만 차지 */
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+.audio-area-header {
+    /* 전체 100% 중 최대 60%만 차지하도록 고정 */
+    width: 60%;            
+    max-width: 60%;        /* 절대 60%를 넘지 않음 */
+    min-width: 300px;      /* 너무 작아지면 안 되므로 최소 너비 */
+    flex-shrink: 1;        /* 화면이 아주 좁아지면 제목을 위해 줄어듦 허용 */
+}
+
+/* 실제 생성되는 플레이어 타겟 */
+.custom-audio-target {
+    width: 100%;           /* 부모(60% 너비)를 꽉 채움 */
+}
+
+/* =============== 플레이어 내부 디자인 =============== */
+.custom-player-wrapper {
+    display: flex;
+    align-items: center;
+    height: 54px;
+    background: #ffffff;
+    border: 1px solid #c9c9c9;
+    padding: 0 12px;
+    position: relative;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* 모든 내부 요소 초기화 */
+.custom-player-wrapper *, 
+.custom-player-wrapper *::before, 
+.custom-player-wrapper *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.main-controls {
+    display: flex;
+    align-items: flex-start;  /* 중앙(center)이 아닌 상단 기준으로 먼저 정렬 */
+    width: 100%;
+    gap: 18px;
+    min-height: 48px;        /* 플레이어 높이 확보 */
+    padding-top: 8px;        /* 상단 여백 살짝 추가 */
+}
+
+.play-btn, 
+.volume-group, 
+.more-menu {
+    align-self: center;      /* 이 버튼들만 부모 높이의 중앙에 위치 */
+    margin-top: -10px;       /* 하단 시간 영역 때문에 생기는 시각적 치우침 보정 */
+}
+
+/* 재생 버튼 */
+.play-btn {
+    width: 32px;
+    height: 32px;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4b85db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+    outline: none;
+}
+
+.play-btn svg {
+    /* SVG 자체가 버튼 크기에 맞춰 유동적으로 변하게 함 */
+    display: block;
+    pointer-events: none; /* 클릭 이벤트 방해 방지 */
+}
+
+.play-btn:hover {
+    background-color: #3a6bbd;
+}
+
+/* 재생바와 시간을 감싸는 영역 */
+.seek-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+}
+
+/* 재생바 */
+.seek-bar {
+    width: 100%;
+    height: 16px;            /* 클릭 영역을 확보하면서 높이 기준 생성 */
+    margin: 0;
+    cursor: pointer;
+    accent-color: #4b85db;
+    display: flex;
+    align-items: center;     /* 슬라이더 트랙이 내부에서 중앙에 오도록 */
+}
+
+/* 하단 시간 표시줄 */
+.time-row {
+    display: flex;
+    justify-content: space-between; /* 양 끝 정렬 */
+    width: 100%;
+    font-size: 0.7rem;
+}
+
+/* 음량 그룹 - 재생바와 공간을 경쟁하지만, 재생바보다 먼저 줄어들게 설정 */
+.volume-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* 웹에서는 120px을 목표로 하되, 재생바가 밀고 들어오면 2순위로 줄어듦 */
+    flex: 0 1 120px; 
+    min-width: 25px;  /* 아이콘(음소거 버튼) 너비만큼만 최소로 남음 */
+    overflow: hidden; /* 줄어들 때 슬라이더가 밖으로 안 삐져나가게 */
+}
+
+.mute-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #4b85db; /* 평소 아이콘 색상 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: color 0.2s;
+}
+
+.mute-btn:hover {
+    color: #3a6bbd; /* 마우스 올렸을 때 플레이어 테마색으로 변경 */
+}
+
+.mute-btn svg {
+    display: block;
+    pointer-events: none;
+}
+
+/* 음량 슬라이더 - 그룹이 줄어들면 같이 줄어듦 */
+.vol-bar {
+    flex: 1;          /* 그룹 내에서 최대한 자리를 잡음 */
+    min-width: 0;     /* 중요: 0까지 줄어들 수 있게 해서 재생바에 공간 양보 */
+    height: 6px;
+    accent-color: #4b85db;
+}
+
+/* 더보기 버튼 - 절대 줄어들지 않고 항상 끝에 고정 */
+.more-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #4b85db; /* 기본 아이콘 색상 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: color 0.2s;
+}
+
+.more-btn:hover {
+    color: #3a6bbd; /* 마우스 올렸을 때 강조색 */
+}
+
+.more-btn svg {
+    display: block;
+    pointer-events: none;
+}
+
+.more-options {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 5px); /* 플레이어 바로 위 */
+    right: 0;
+    background: white;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    min-width: 140px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 9999;             /* 어떤 요소보다 위에 오도록 높게 설정 */
+}
+
+.more-options.show {
+    display: block;
+}
+
+.opt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.opt-item:last-child { margin-bottom: 0; }
+
+/* 반복 재생 전용 스위치 컨테이너 */
+.loopswitch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 18px;
+    vertical-align: middle;
+}
+/* 실제 체크박스는 숨김 */
+.loopswitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* 스위치 배경 (OFF) */
+.loopswitch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .3s;
+}
+/* 스위치 안의 흰색 원 */
+.loopswitch-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .3s;
+}
+/* 체크(ON) 되었을 때 배경색 */
+.loopswitch input:checked + .loopswitch-slider {
+    background-color: #4b85db;
+}
+/* 체크(ON) 되었을 때 원의 이동 */
+.loopswitch input:checked + .loopswitch-slider:before {
+    transform: translateX(22px);
+}
+/* 둥근 모양 유지 */
+.loopswitch-slider.round {
+    border-radius: 8px;
+}
+.loopswitch-slider.round:before {
+    border-radius: 50%;
+}
+
+/* 배속 선택창 전체 스타일 */
+.speed-sel {
+    min-width: 74px;
+    font-family: inherit; /* 부모 폰트 상속 */
+    font-size: 0.75rem;
+    background-color: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    padding: 2px 4px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+/* 마우스를 올렸을 때 테두리 색상 변경 */
+.speed-sel:hover {
+    border-color: #4b85db;
+}
+.speed-sel option {
+    font-family: inherit; /* 부모 폰트 상속 */
+    font-size: 0.7rem;
+    background: #fff;
+}
+
+/* 애매한 너비 대응 (음량 슬라이더가 빠지며 재생바가 늘어나는 지점) */
+@media (max-width: 1100px) {
+    /* 음량 슬라이더 제거 */
+    .custom-player-wrapper .vol-bar {
+        display: none;
+    }
+    .custom-player-wrapper .main-controls {
+        display: flex;
+        align-items: center; /* 중앙 정렬 해제, 상단 기준 */
+        gap: 0;
+        width: 100%;
+    }
+    /* 재생바 영역: 상단 정렬 유지하면서 버튼들과 수평 맞춤 */
+    .custom-player-wrapper .seek-area {
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0 12px;
+        display: flex;
+        flex-direction: column;
+    }
+    /* 고정 요소들: 수축 방지 및 마진 정리 */
+    .custom-player-wrapper .play-btn,
+    .custom-player-wrapper .volume-group,
+    .custom-player-wrapper .more-menu {
+        flex: 0 0 auto;
+        margin-top: -8px;
+    }
+}
+
+/* 모바일 대응 (전체 너비 확장 및 더보기 버튼 보호) */
+@media (max-width: 768px) {
+    /* 상위 컨테이너: 제목과 오디오 정렬 */
+    .header-and-audio {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: nowrap;
+    }
+    .audio-area-header {
+        flex: 1;
+        min-width: 0;
+        max-width: none;
+    }
+    /* 플레이어 내부 컨트롤러: 버튼 사이 크기 조절 */
+    .custom-player-wrapper .main-controls {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
+    /* 재생바가 공간 부족 시 가장 먼저 줄어듦 */
+    .custom-player-wrapper .seek-area {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+    /* 고정 요소들: 수축 방지 및 마진 정리 */
+    .custom-player-wrapper .play-btn,
+    .custom-player-wrapper .volume-group,
+    .custom-player-wrapper .more-menu {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+    /* 재생바와 시간 영역 전체를 양옆 버튼으로부터 떼어놓음 */
+    .custom-player-wrapper .seek-area {
+        flex: 1 1 0;
+        min-width: 0;
+        margin: 0 10px; /* 좌우에 10px씩 여유 공간 부여 */
+        display: flex;
+        flex-direction: column;
+    }
+    /* 시간 텍스트가 재생바와 너무 붙어있다면 상단 마진 추가 */
+    .custom-player-wrapper .time-row {
+        font-size: 0.65rem;
+    }
+}
+/* =============== 오디오 스타일 =============== */
+/* ============================================ */
+
+
+
+/* =============== 핫스팟 =============== */
+/* 핫스팟 스타일 */
+.hotspot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    }
+        
+    .hotspot::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    }
+        
+    .hotspot:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%) scale(1.3);
+    border-color: #fff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    }
+        
+    .hotspot-label {
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    }
+        
+    .hotspot:hover .hotspot-label {
+    opacity: 1;
+    }
+        
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.6);
+            opacity: 0;
+        }
+    }
+        
+    /* 안내 메시지 */
+    .map-info {
+        margin: 0 0 20px 0;
+        padding: 15px 20px;
+        background: #e3f2fd;
+        border-left: 4px solid #4b85db;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        color: #1565c0;
+    }
+
+    .map-container {
+        position: relative;
+        z-index: 5;
+    }

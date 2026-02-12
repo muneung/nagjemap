@@ -1,0 +1,149 @@
+<h1>프랙처 문</h1>
+
+<div class="map-info">
+    💡 기능 테스트중
+</div>
+
+<div class="map-section">
+    <h3>시어하트 지도</h3>
+
+    <div class="map-section-inner">
+        <div class="map-container" id="mapContainer">
+            <img src="./images/map1.png" alt="시어하트 지도" class="map-image" id="mapImage">
+        </div>
+    </div>
+</div>
+
+<script>
+    // 파일 구조 변동으로 사용하기 위해서는 index 하단에 복붙하거나 js 파일 만들어서 연동 필요 //
+    // 참조: hotspot 참조 js 단위 필요로(역량부족) 임시로 html에 쌩으로 붙여넣음 //
+    function initializeMenu() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        if (!menu || !menuToggle) return;
+
+        // 메뉴 토글 함수
+        function toggleMenu() {
+            menu.classList.toggle('visible');
+            menu.classList.toggle('hidden');
+        }
+
+        // 버튼 클릭 이벤트 리스너 연결
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // 화면 크기를 감지하여 메뉴 상태를 설정하는 함수
+        function checkViewport() {
+            // 모바일 기준 폭 768px
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                // 모바일 상태: 메뉴를 fixed로 고정하고 숨김 상태로 시작하도록 클래스 설정
+                menu.style.position = 'fixed';
+                menu.style.height = '100vh';
+
+                // 만약 visible 또는 hidden 클래스가 설정되어 있지 않다면 hidden으로 시작
+                if (!menu.classList.contains('visible') && !menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            } else {
+                // 데스크톱 상태: 메뉴를 항상 보이게 함
+                menu.style.transform = 'none';
+                menu.classList.remove('hidden', 'visible');
+                menu.style.position = 'initial';
+                menu.style.height = 'auto';
+            }
+        }
+
+        // 페이지 로드 시 및 화면 크기 변경 시 함수 실행
+        window.addEventListener('load', checkViewport);
+        window.addEventListener('resize', checkViewport);
+
+        // load 이벤트 이전에 스크립트가 실행될 경우를 대비해 한 번 즉시 실행
+        checkViewport();
+    }
+
+    // DOM 콘텐츠가 모두 로드된 후 initializeMenu 함수 실행
+    document.addEventListener('DOMContentLoaded', initializeMenu);
+
+    // 난 참조문같은거 안 적는 씹상여자임
+    const hotspots = [
+        // 왼쪽 지역
+        { name: 'centerpin', x: 50, y: 50, url: 'loca_example.html' },
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('mapContainer');
+        const mapImage = document.getElementById('mapImage');
+        let createdHotspots = [];
+
+        function createHotspotElements() {
+
+            createdHotspots.forEach(h => h.el.remove());
+            createdHotspots = [];
+
+            hotspots.forEach(spot => {
+                const el = document.createElement('div');
+                el.className = 'hotspot';
+
+                el.dataset.x = spot.x;
+                el.dataset.y = spot.y;
+                el.dataset.url = spot.url || '';
+
+                const label = document.createElement('div');
+                label.className = 'hotspot-label';
+                label.textContent = spot.name || '';
+                el.appendChild(label);
+
+                el.addEventListener('click', (e) => {
+                    const url = el.dataset.url;
+                    if (url) window.location.href = url;
+                });
+
+                container.appendChild(el);
+                createdHotspots.push({ spot, el });
+            });
+        }
+
+        function positionHotspots() {
+            const imgRect = mapImage.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+
+            if (imgRect.width === 0 || imgRect.height === 0) return;
+
+            createdHotspots.forEach(item => {
+                const el = item.el;
+                const pctX = parseFloat(el.dataset.x); // 0~100
+                const pctY = parseFloat(el.dataset.y);
+
+                const px = (pctX / 100) * mapImage.clientWidth;
+                const py = (pctY / 100) * mapImage.clientHeight;
+
+                el.style.left = px + 'px';
+                el.style.top = py + 'px';
+
+            });
+        }
+
+        let resizeTimeout = null;
+        function scheduleReposition() {
+            if (resizeTimeout) clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(positionHotspots, 50);
+        }
+
+        function init() {
+            createHotspotElements();
+            positionHotspots();
+        }
+
+        if (mapImage.complete) {
+            init();
+        } else {
+            mapImage.addEventListener('load', init);
+        }
+
+        window.addEventListener('resize', scheduleReposition);
+        window.addEventListener('orientationchange', scheduleReposition);
+        window.addEventListener('scroll', scheduleReposition);
+    });
+</script>

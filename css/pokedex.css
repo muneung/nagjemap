@@ -1,0 +1,257 @@
+/* 전체를 감싸는 회색 블록 */
+.pd-section {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* 테이블이 놓일 공간 (여백 생성) */
+.pd-section-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* pokedex-main 리스트 테이블 스타일 */
+.pd-table {
+    width: 90%;
+    margin: 0 auto;
+    /* 중앙 정렬 */
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border: 2px solid #4b85db;
+    border-radius: 4px; /* 테이블 모서리 */
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 테이블 그림자 */
+}
+
+/* 테이블 헤더 색상 (도감 포인트 컬러) */
+.pd-table th {
+    background-color: #4b85db;
+    border-bottom: 1px solid #ffffff;
+    color: white;
+    padding: 10px;
+}
+
+.pd-table td {
+    border-bottom: 1px solid #d3d3d3;
+    padding: 14px 10px;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pd-table tr:last-child td {
+    /* 마지막 행(tr)의 셀(td)만 경계선x */
+    border-bottom: none;
+}
+
+/* 이미지 셀 스타일 */
+.pd-table-img {
+    text-align: center;
+    /* 셀 가로 중앙 */
+    vertical-align: middle;
+    /* 셀 세로 중앙 */
+    padding: 10px 0;
+}
+
+.pd-table-img img {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    /* 중앙 정렬 안먹혀서 달아둠 */
+    vertical-align: middle;
+    object-fit: contain;
+    /* 비율을 유지하며 박스 안에 들어가도록 */
+    flex-shrink: 0;
+    /* 혹시 모를 플렉스 환경에서 줄어드는 일 방지 */
+}
+
+
+
+/* 타입 배지 공통 스타일 */
+.type-badge {
+    padding: 4px 6px 4px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    margin: 2px 0px 2px 0px;
+    text-align: center;
+    min-width: 60px;
+}
+
+/* 타입 배지 작은 버전 (도감 메인페이지 목록에 사용) */
+.type-badge-small {
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 2px 0px 2px 0px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* 타입별 색상 */
+.type-normal    { background: #9ba2a1; }
+.type-fighting  { background: #ff8100; }
+.type-flying    { background: #83b8ec; }
+.type-poison    { background: #9340cd; }
+.type-ground    { background: #914e20; }
+.type-rock      { background: #b3a881; }
+.type-bug       { background: #91a017; }
+.type-ghost     { background: #70416f; }
+.type-steel     { background: #61a0b8; }
+.type-fire      { background: #e72727; }
+.type-water     { background: #2683eb; }
+.type-grass     { background: #3ea029; }
+.type-electric  { background: #fbc100; }
+.type-psychic   { background: #f04077; }
+.type-ice       { background: #40d8ff; }
+.type-dragon    { background: #4e61e1; }
+.type-dark      { background: #50423a; }
+.type-fairy     { background: #f26df3; }
+
+
+
+/* pokedex-detail 스타일 */
+
+/* 테이블이 놓일 공간 (여백 생성) */
+.pdd-section-content {
+    padding: 10px 10px 10px 10px;
+}
+
+/* 최상단 헤더 테이블 스타일(이미지 들어가는 테이블) */
+.pdd-header-table {
+    width: 95%;
+    margin: 0px auto;
+    border-collapse: collapse;
+    table-layout: fixed
+}
+/* 모든 셀 공통: 가로 중앙 정렬 및 선 설정 */
+.pdd-header-table th,
+.pdd-header-table td {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #d3d3d3;
+    padding: 10px 10px 10px 10px;
+    background-color: #ffffff;
+}
+/* 헤더 테이블의 헤더 배경색은 무조건 흰색 */
+table.pdd-header-table thead tr th {
+    font-weight: 1;
+    background-color: #ffffff;
+}
+/* [이미지 행] 크기 고정 및 비율 유지 */
+.pdd-header-table img {
+    width: 256px;
+    height: 256px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.pdd-header-table .small-text {
+    font-size: 0.75rem;
+}
+
+/* 일반 테이블 스타일 */
+.pdd-table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed; /* 셀 너비를 일정하게 유지 */
+    font-size: 0.9rem;
+    word-break: break-all; /* 숫자나 긴 단어도 칸에 맞춰 줄바꿈 */
+}
+/* 모든 셀 공통: 가로 중앙 정렬 및 선 설정 */
+.pdd-table th {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #d3d3d3;
+    padding: 8px 8px 8px 8px;
+    color: #ffffff;
+    font-weight: 1;
+}
+.pdd-table td {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #d3d3d3;
+    padding: 8px 8px 8px 8px;
+    background-color: #ffffff;
+}
+/* 도감 설명 텍스트 */
+.pdd-desc-text {
+    text-align: left !important;
+    padding: 8px 12px 8px 12px !important; /* 좌우 여유공간 */
+    font-size: 0.85rem;
+}
+/* 진화 이미지 */
+.evo-pokemon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- 타입별 테두리 및 헤더 색상 클래스 --- */
+.pdd-type-normal { border: 2px solid #9ba2a1; }
+.pdd-type-normal th { background-color: #9ba2a1; }
+
+.pdd-type-fighting { border: 2px solid #ff8100; }
+.pdd-type-fighting th { background-color: #ff8100; }
+
+.pdd-type-flying { border: 2px solid #83b8ec; }
+.pdd-type-flying th { background-color: #83b8ec; }
+
+.pdd-type-poison { border: 2px solid #9340cd; }
+.pdd-type-poison th { background-color: #9340cd; }
+
+.pdd-type-ground { border: 2px solid #914e20; }
+.pdd-type-ground th { background-color: #914e20; }
+
+.pdd-type-rock { border: 2px solid #b3a881; }
+.pdd-type-rock th { background-color: #b3a881; }
+
+.pdd-type-bug { border: 2px solid #91a017; }
+.pdd-type-bug th { background-color: #91a017; }
+
+.pdd-type-ghost { border: 2px solid #70416f; }
+.pdd-type-ghost th { background-color: #70416f; }
+
+.pdd-type-steel { border: 2px solid #61a0b8; }
+.pdd-type-steel th { background-color: #61a0b8; }
+
+.pdd-type-fire { border: 2px solid #e72727; }
+.pdd-type-fire th { background-color: #e72727; }
+
+.pdd-type-water { border: 2px solid #2683eb; }
+.pdd-type-water th { background-color: #2683eb; }
+
+.pdd-type-grass { border: 2px solid #3ea029; }
+.pdd-type-grass th { background-color: #3ea029; }
+
+.pdd-type-electric { border: 2px solid #fbc100; }
+.pdd-type-electric th { background-color: #fbc100; }
+
+.pdd-type-psychic { border: 2px solid #f04077; }
+.pdd-type-psychic th { background-color: #f04077; }
+
+.pdd-type-ice { border: 2px solid #40d8ff; }
+.pdd-type-ice th { background-color: #40d8ff; }
+
+.pdd-type-dragon { border: 2px solid #4e61e1; }
+.pdd-type-dragon th { background-color: #4e61e1; }
+
+.pdd-type-dark { border: 2px solid #50423a; }
+.pdd-type-dark th { background-color: #50423a; }
+
+.pdd-type-fairy { border: 2px solid #f26df3; }
+.pdd-type-fairy th { background-color: #f26df3; }

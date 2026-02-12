@@ -1,0 +1,381 @@
+.ritz .waffle a {
+    color: inherit;
+}
+
+.ritz .waffle .s0 {
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s1 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s2 {
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s3 {
+    border-top: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ea9999;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s4 {
+    border-right: 1px SOLID #000000;
+    background-color: #9fc5e8;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s5 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #efefef;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s6 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #fff2cc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s7 {
+    border-top: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s8 {
+    border-right: 1px SOLID #000000;
+    background-color: #efefef;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s9 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #d9ead3;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s10 {
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+}
+
+.ritz .waffle .s11 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s12 {
+    background-color: #efefef;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s13 {
+    border-top: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #d9d2e9;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s14 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #9fc5e8;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s15 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #9fc5e8;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s16 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #fce5cd;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s17 {
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s18 {
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s19 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #efefef;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s20 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s21 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #cfe2f3;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s22 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: bottom;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s23 {
+    background-color: #3d85c6;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s24 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #3d85c6;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s25 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #9fc5e8;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s26 {
+    border-left: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #efefef;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+
+
+/* 모바일 환경 가독성 개선 */
+@media screen and (max-width: 768px) {
+    /* 테이블을 감싸는 컨테이너 설정 */
+    .map-table-container {
+        width: 100%;
+        overflow-x: auto; /* 축소해도 테이블이 화면보다 크면 스크롤이 필요함 */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 테이블 축소 */
+    .ritz.grid-container {
+        transform: scale(0.8); /* 크기 조정 */
+        transform-origin: top left; /* 왼쪽 상단 고정 */
+        margin-bottom: -180px; /* 축소 후 아래쪽에 남는 큰 여백을 제거 */
+    }
+}
