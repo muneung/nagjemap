@@ -156,6 +156,47 @@ function loadPokemonDetail() {
 }
 
 
+// ====================================================================
+// 레시피 상세 정보 로드 (recipe-detail.html?name=레시피이름)(위에거 뽑아옴)
+// ====================================================================
+function loadRecipeDetail() {
+    const detailContainer = document.getElementById('recipe-detail-placeholder');
+    if (!detailContainer) return;
+
+    // SPA 구조에 맞게 해시(#)에서 파라미터를 추출
+    const hash = window.location.hash;
+    if (!hash.includes('?name=')) {
+        detailContainer.innerHTML = `<p>레시피 정보가 지정되지 않았습니다.</p>`;
+        return;
+    }
+
+    // URL에서 레시피 이름 추출 (#pokedex-detail.html?name=번호 > 번호)
+    const recipeName = hash.split('?name=')[1];
+
+    // 데이터 파일 경로 지정 (폴더: details-recipe / 파일: 레시피이름.html)
+    const detailFilePath = `details-recipe/${recipeName}.html`;
+
+    detailContainer.innerHTML = `<p><strong>${recipeName}</strong> 정보를 불러오는 중입니다...</p>`;
+
+    fetch(detailFilePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`${recipeName} 상세 파일을 찾을 수 없습니다.`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            // 가져온 HTML을 컨테이너에 삽입
+            detailContainer.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Recipe detail loading failed:', error);
+            detailContainer.innerHTML = `<p style="color: red;">정보를 불러오는 데 실패했습니다. (파일명: ${recipeName}.html)</p>`;
+        });
+}
+
+
+
 
 // ====================================================================
 // 사이드바
