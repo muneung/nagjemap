@@ -1,0 +1,88 @@
+<table class="pd-table"> <!-- 레시피 정보 테이블 -->
+    <colgroup>
+        <col style="width: 20%;">
+        <col style="width: 65%;">
+        <col style="width: 15%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th colspan="3">레시피 정보</th>
+        </tr>
+        <tr>
+            <th>요리명</th>
+            <th>설명</th>
+            <th>최소 등급</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>숲입의 와일드 꼬치구이</td>
+            <td>꼬치구이에서 중요한 것은 첫째가 재료, 둘째가 불의 세기! 그리고 셋째가, 함께 오순도순 이야기를 나눌 수 있는 분위기! 친구와 함께라면 어느 재료를 넣어도 괜찮고, 불을 너무 강하게 사용해 질겨져버리더라도 상관 없다!</td>
+            <td>마자용급</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="pd-table"> <!-- 재료 테이블 -->
+    <colgroup>
+        <col style="width: 25%;">
+        <col style="width: 75%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">재료 정보</th>
+        </tr>
+        <tr>
+            <th>재료</th>
+            <th>손질법</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>고기류×1</td>
+            <td>한 입 크기로 썰어 준비한다. 사치스럽게 먹고 싶다면, 조금 커도 좋다.</td>
+        </tr>
+        <tr>
+            <td>채소팩×1</td>
+            <td>「굵은」 채소를 채집한다면, 대체할 수 있다. 한 입 크기로 손질한다.</td>
+        </tr>
+        <tr>
+            <td>소금&후추×1</td>
+            <td>두 세트 분량.</td>
+        </tr>
+        <tr>
+            <td>(선택)목탄×1</td>
+            <td>불을 피울 때 사용하면 숯 향을 입힐 수 있다.</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="pd-table"> <!-- 조리법 테이블 -->
+    <colgroup>
+        <col style="width: 15%;">
+        <col style="width: 85%;">
+    </colgroup>
+    <thead>
+      <tr>
+          <th colspan=2>조리법</th>
+      </tr>
+      <tr>
+          <th>단계</th>
+          <th>설명</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>간을 한 고기와 야채를 꼬치에 꽂는다!</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>굽는다!</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>보기 좋게 노릇노릇해지면 완성! ... 간단하지만, 고기만이 아니라 해물을 사용한다던지, 소스를 만들어 바른다던지, 다양한 변주를 줄 수 있다!</td>
+        </tr>
+    </tbody>
+</table>
