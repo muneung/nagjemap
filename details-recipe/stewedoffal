@@ -1,0 +1,96 @@
+<table class="pd-table"> <!-- 레시피 정보 테이블 -->
+    <colgroup>
+        <col style="width: 20%;">
+        <col style="width: 65%;">
+        <col style="width: 15%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th colspan="3">레시피 정보</th>
+        </tr>
+        <tr>
+            <th>요리명</th>
+            <th>설명</th>
+            <th>최소 등급</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>등대시티풍 내장찜</td>
+            <td>하오에 왔으면, 이 이것만은 반드시 먹어보아야 한다! 물고기 포켓몬의 내장을 이용했단 것이 조금 꺼려질 수는 있지만... 신선한 재료와 훌륭한 주방장의 솜씨를 지나간 이상 그 맛만은 보장되어 있다! 하오에서 내장찜을 주문하는 것으로 습득.</td>
+            <td>대왕끼리동급</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="pd-table"> <!-- 재료 테이블 -->
+    <colgroup>
+        <col style="width: 25%;">
+        <col style="width: 75%;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th colspan="2">재료 정보</th>
+        </tr>
+        <tr>
+            <th>재료</th>
+            <th>손질법</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>생선 포켓몬×1</td>
+            <td>내장만 사용한다. 갓 잡은 상태가 아니라면, 신선도가 크게 떨어질 것이다...</td>
+        </tr>
+        <tr>
+            <td>채소팩×2</td>
+            <td>마늘, 쪽파, 양파, 대파, 콩나물을 사용한다. 마늘은 다지고, 양파와 대파는 숭덩숭덩, 쪽파는 작게 썰어 얹고, 콩나물은 많은 편이 맛있다!</td>
+        </tr>
+        <tr>
+            <td>소금&후추×2</td>
+            <td>한 그릇 분량.</td>
+        </tr>
+        <tr>
+            <td>치리열매×1</td>
+            <td>다져서 사용한다.</td>
+        </tr>
+        <tr>
+            <td>토망열매×1</td>
+            <td>다져서 사용한다. 말려둘 수 있다면 더 좋다.</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="pd-table"> <!-- 조리법 테이블 -->
+    <colgroup>
+        <col style="width: 15%;">
+        <col style="width: 85%;">
+    </colgroup>
+    <thead>
+      <tr>
+          <th colspan=2>조리법</th>
+      </tr>
+      <tr>
+          <th>단계</th>
+          <th>설명</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>다진 열매와 마늘, 소금과 후추를 섞어, 붉은 색이 나오도록 한 뒤 조금 재워둔다.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>양파와 대파, 콩나물과 쪽파를 먼저 얹은 뒤, 그 위에 생선 포켓몬의 내장, 그 위에 만들어둔 양념을 얹고, 뚜껑을 닫는다.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>약한 불로 서서히 익혀, 채소의 수분으로 재료를 익힌다.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>채소들의 숨이 죽은 뒤, 뒤섞어 양념이 배어들도록 조금 볶고 나면 완성!</td>
+        </tr>
+    </tbody>
+</table>
