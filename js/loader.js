@@ -38,6 +38,11 @@ async function navigateTo(pageUrl) {
             loadPokemonDetail();
         }
 
+        // 레시피 상세 정보
+        if (document.getElementById('recipe-detail-placeholder')) {
+            loadRecipeDetail();
+        }
+
         // 메뉴 활성화 표시 업데이트
         highlightActiveMenu(); 
 
