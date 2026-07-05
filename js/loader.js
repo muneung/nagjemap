@@ -171,7 +171,7 @@ function loadRecipeDetail() {
     }
 
     // URL에서 레시피 이름 추출 (#pokedex-detail.html?name=이름 > 이름)
-    const recipeName = hash.substring(1).split('?name=')[1];
+    const recipeName = hash.split('?name=')[1];
 
     // 데이터 파일 경로 지정 (폴더: details-recipe / 파일: 레시피이름.html)
     const detailFilePath = `details-recipe/${recipeName}.html`;
