@@ -1,0 +1,173 @@
+<div id="detail-route2" class="map-detail-section">
+
+    <div class="header-and-audio">
+        <h4>4번 도로</h4>
+        <div class="audio-area-header">
+            <div class="custom-audio-target"
+                data-src="https://res.cloudinary.com/doarbks80/video/upload/v1770340509/4%EB%B2%88%EB%8F%84%EB%A1%9C%EC%9D%98_%ED%85%8C%EB%A7%88_j3ukdt.mp3">
+            </div>
+        </div>
+    </div>
+
+    <!--인접지역-->
+    <div class="route-table-wrapper">
+        <table class="route-table">
+            <colgroup>
+                <col class="col-west" style="width: 22%;">
+                <col class="col-westway" style="width: 16%;">
+                <col class="col-center" style="width: 24%;">
+                <col class="col-eastway" style="width:16%;">
+                <col class="col-east" style="width: 22%;">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="5">인접 지역</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="map1-detail.html?id=detail-route4">3번도로</a></td>
+                    <td>←</td>
+                    <td class="text-bold">4번 도로</td>
+                    <td>→</td>
+                    <td><a href="map1-detail.html?id=detail-lighthousecity">등대시티</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        등대호수를 끼고 완만하게 휘어지는 곡선형의 길입니다.
+        도시에서 가깝고, 아름다운 등대호수의 정경 덕인지 산책이나 접사, 사이클을 즐기러 나오는 사람들이 어렵지 않게 눈에 보입니다.
+        최근에는 캠핑 문화가 유행하는 장소라는 모양이에요.
+        가라르지방의 트레이너라면 활약할 수 있는 일이 있을지도 모르겠어요!
+    </p>
+
+    <!--트레이너-->
+    <table class="pokemon-spawn-table">
+
+        <colgroup>
+            <col style="width: 36%;">
+            <col style="width: 64%;">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="2">트레이너</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    캠프걸 나데시코
+                </td>
+                <td>
+                    「Lv.8 불꽃숭이」
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    캠프걸 린
+                </td>
+                <td>
+                    「Lv.7 과사삭벌레」
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--아이템-->
+    <table class="pokemon-spawn-table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 80%;">
+        </colgroup>
+
+        <tr>
+            <th colspan="2">찾을 수 있는 아이템</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    새콤한사과
+                </td>
+                <td style="text-align: left;">
+                    한 그루의 나무에 여럿 달려있습니다.
+                    새콤한 맛 때문인지 야생의 내루미들도 좀처럼 다가지 않습니다.
+                    식재료로 사용할 수 있습니다.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 포켓몬 출현 정보 테이블 -->
+    <table class="pokemon-spawn-table">
+        <colgroup>
+            <col class="col-prob" style="width: 14%;">
+            <col class="col-location" style="width: 14%;">
+            <col class="col-all" style="width: 32%;">
+            <col class="col-day" style="width: 20%;">
+            <col class="col-night" style="width: 20%;">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="5">출현 포켓몬 Lv: 5 ~ 7</th>
+            </tr>
+            <tr>
+                <th>출현 확률</th>
+                <th>출현 위치</th>
+                <th>상시</th>
+                <th>낮</th>
+                <th>밤</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="2">흔한 확률</td>
+                <td>지상</td>
+                <td>파치리스, 스컹뿡, 내루미, 과사삭벌레</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>왕자리</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">드문 확률</td>
+                <td>지상</td>
+                <td>-</td>
+                <td>솔록, 사철록(여름의 모습), 해너츠</td>
+                <td>무스틈니</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>-</td>
+                <td>-</td>
+                <td>흔들풍손</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">귀한 확률</td>
+                <td>지상</td>
+                <td>켈리몬, 불꽃숭이</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>캐스퐁</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
