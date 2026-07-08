@@ -1,0 +1,173 @@
+<div id="detail-route2" class="map-detail-section">
+
+    <div class="header-and-audio">
+        <h4>4번 도로</h4>
+        <div class="audio-area-header">
+            <div class="custom-audio-target"
+                data-src="https://res.cloudinary.com/doarbks80/video/upload/v1770340509/4%EB%B2%88%EB%8F%84%EB%A1%9C%EC%9D%98_%ED%85%8C%EB%A7%88_j3ukdt.mp3">
+            </div>
+        </div>
+    </div>
+
+    <!--인접지역-->
+    <div class="route-table-wrapper">
+        <table class="route-table">
+            <colgroup>
+                <col class="col-west" style="width: 22%;">
+                <col class="col-westway" style="width: 16%;">
+                <col class="col-center" style="width: 24%;">
+                <col class="col-eastway" style="width:16%;">
+                <col class="col-east" style="width: 22%;">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th colspan="5">인접 지역</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="map1-detail.html?id=detail-lighthousecity">등대시티</a></td>
+                    <td>←</td>
+                    <td class="text-bold">6번도로</td>
+                    <td>→</td>
+                    <td><a href="map1-detail.html?id=detail-everwaitvillage">기다림마을</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        기다림 마을로 내려가는 길입니다.
+        절벽에 억지로 만들어진 길이기에 실족, 낙석에 주의하며 전진합시다.
+    </p>
+
+    <!--아이템-->
+    <table class="pokemon-spawn-table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 80%;">
+        </colgroup>
+
+        <tr>
+            <th colspan="2">찾을 수 있는 아이템</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    금구슬
+                </td>
+                <td style="text-align: left;">
+                    6번도로의 절벽에는 등산가 아저씨가 걸터앉아 있습니다.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    기술머신04 「명상」
+                </td>
+                <td style="text-align: left;">
+                    6번도로를 지나가다보면, 특이한 복식의 청년이 바위의 앞에서 인상을 찌푸리며 손을 뻗은··· 조금 우스꽝스러운 모습을 발견할 수 있습니다.
+                    손을 대지 않고 바위를 옮기려는 것 같은데, 뒤에 그만 알 수 있는 무언가라도 있는 것일까요? 바위를 옮길 수 있게 된다면 알 수 있을 것입니다!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--트레이너-->
+    <table class="pokemon-spawn-table">
+
+        <colgroup>
+            <col style="width: 36%;">
+            <col style="width: 64%;">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="2">트레이너</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    등산가 옥엽
+                </td>
+                <td>
+                    「Lv.11 단굴」, 「Lv.12 롱스톤」
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    포켓몬레인저 강희
+                </td>
+                <td>
+                    「Lv.14 앱솔」
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 포켓몬 출현 정보 테이블 -->
+    <table class="pokemon-spawn-table">
+        <colgroup>
+            <col class="col-prob" style="width: 14%;">
+            <col class="col-location" style="width: 14%;">
+            <col class="col-all" style="width: 32%;">
+            <col class="col-day" style="width: 20%;">
+            <col class="col-night" style="width: 20%;">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="5">출현 포켓몬 Lv: 10 ~ 25</th>
+            </tr>
+            <tr>
+                <th>출현 확률</th>
+                <th>출현 위치</th>
+                <th>상시</th>
+                <th>낮</th>
+                <th>밤</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>흔한 확률</td>
+                <td>지상</td>
+                <td>디그다, 꼬마돌, 썬더라이, 알통몬</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">드문 확률</td>
+                <td>지상</td>
+                <td>달막화, 코일, 곤율랭, 근육몬, 가보리</td>
+                <td>-</td>
+                <td>해골몽, 고오스</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>코일</td>
+                <td>-</td>
+                <td>해골몽, 고오스</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">귀한 확률</td>
+                <td>지상</td>
+                <td>딥상어동, 아공이, 롱스톤, 암멍이</td>
+                <td>-</td>
+                <td>고우스트</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>-</td>
+                <td>-</td>
+                <td>고우스트</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
