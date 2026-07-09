@@ -20,7 +20,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td class="text-bold">천종루</td>
+                    <td class="text-bold">사파리존</td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -100,7 +100,7 @@
 
         <thead>
             <tr>
-                <th colspan="5">출현 포켓몬 Lv: ? ~ 50</th>
+                <th colspan="5">사막 에이리어</th>
             </tr>
             <tr>
                 <th>출현 확률</th>
@@ -115,7 +115,7 @@
             <tr>
                 <td>흔한 확률</td>
                 <td>지상</td>
-                <td>골비람, 아이앤트, 오뚝군, 동미러</td>
+                <td>모래두지</td>
                 <td>-</td>
                 <td>-</td>
             </tr>
@@ -123,27 +123,21 @@
             <tr>
                 <td rowspan="2">드문 확률</td>
                 <td>지상</td>
-                <td>앱솔, 미라몽</td>
+                <td>탕구리</td>
                 <td>-</td>
                 <td>-</td>
             </tr>
             <tr>
                 <td>공중</td>
-                <td>점토도리</td>
+                <td>버랜지나</td>
                 <td>-</td>
                 <td>-</td>
             </tr>
 
             <tr>
-                <td rowspan="2">귀한 확률</td>
+                <td>귀한 확률</td>
                 <td>지상</td>
-                <td>동탁군, 단칼빙, 프리지오</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>공중</td>
-                <td>고우스트</td>
+                <td>니드런♀, 니드런♂</td>
                 <td>-</td>
                 <td>-</td>
             </tr>
@@ -151,18 +145,11 @@
             <tr>
                 <td>굉장히 귀한 확률</td>
                 <td>지상</td>
-                <td>???, ???</td>
                 <td>-</td>
                 <td>-</td>
+                <td>밤선인</td>
             </tr>
 
-            <tr>
-                <td>우두머리</td>
-                <td>지상</td>
-                <td>■■■</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
         </tbody>
 
     </table>
