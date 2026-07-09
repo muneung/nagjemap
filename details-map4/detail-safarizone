@@ -1,0 +1,169 @@
+<div id="detail-sunrisepier" class="map-detail-section">
+
+    <div class="header-and-audio">
+        <h4>사파리존</h4>
+        <div class="audio-area-header">
+            <div class="custom-audio-target"
+                data-src="https://res.cloudinary.com/ktfmq0ik/video/upload/v1783596389/%EC%B2%9C%EC%A2%85%EB%A3%A8%EC%9D%98_%ED%85%8C%EB%A7%88_najzy1.mp3">
+            </div>
+        </div>
+    </div>
+
+    <div class="route-table-wrapper">
+        <table class="route-table">
+            <thead>
+                <tr>
+                    <th colspan="5">인접 지역</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-bold">천종루</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>↓</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="map4-detail.html?id=detail-aemeath">고리마을</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        아이미스 환초가 이데아 생태계의 보고라고 불리는 이유에는 생태학적으로 특이하고 풍요로운 환경적 요소도 있습니다만,
+        그건 어디까지나 여러분들이 이데아의 땅을 누비기 전부터 이곳의 조사에 착수했던 생태학자나 지질학자들 사이에서나 통용되는 고리타분한 이유입니다.
+        여러분들 사이에서 이 아이미스 환초가 이데아 생태계의 보고라고 불릴 가장 확실한 이유는 이런 지루한 게 아니죠! 
+        <br><br>
+        파도치는 바다를 끼고 넓게 펼쳐진 습지, 다리를 하나 건너면 마치 별천지인 것처럼 드리운 초원, 한 치 앞도 보이지 않을 만큼 억세고 길게 자란 풀숲과 해풍을 맞으면서도
+        아름드리 우거진 숲이 모두 한 군데에 모여 있는 모습을 상상해보신 적이 있나요? 혹은, 상상이 되시나요? 여태껏 봐왔던 포켓몬도, 이제껏 만나지 못하셨던 포켓몬도 아이미스 환초에서 만나실 수 있다면,
+        포켓몬 트레이너인 여러분은 두근거리실 수밖에 없지 않을까요?
+        <br><br>
+        네! 그게 바로 여러분이 바라보고 계시는 아이미스 환초가 이데아 생태계의 보고라고 불릴 가장 큰 이유입니다!
+        이데아 지방의 문이 열리는 것과 동시에 개장된 아이미스 사파리존은, 아이미스 환초의 넓고 기름진 땅을 기반 삼아 여러 생태계를 조성해 이데아의 포켓몬들이 자유롭게 살 수 있도록 안배하는 것과 더불어,
+        이데아 지방에 서식하지 않는 일부 포켓몬들도 해로를 통해 들여와 여러분들의 이목을 끌 준비도 훌륭하게 끝마친 채 여러분을 기다리고 있었습니다. 
+        <br><br>
+        뭘 망설이시나요? 이곳까지 당도하신 여러분에게 더이상 망설임이라는 단어는 어울리지 않습니다.
+        새로운 만남을 필요로 하고 계신다면, 색다른 경험에 갈증하고 계셨다면, 아이미스 사파리존으로 달려가보세요!
+        <br><br>
+        만남은 반드시 여러분을 기다리고 있을 테니까요. 
+
+    </p>
+
+    <!--아이템-->
+    <table class="pokemon-spawn-table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 80%;">
+        </colgroup>
+
+        <tr>
+            <th colspan="2">찾을 수 있는 아이템</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    사파리볼
+                </td>
+                <td style="text-align: left;">
+                    사파리존에 들어가서 사용할 수 있습니다.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 포켓몬 출현 정보 테이블 -->
+    <table class="pokemon-spawn-table">
+        <colgroup>
+            <col class="col-prob" style="width: 14%;">
+            <col class="col-location" style="width: 14%;">
+            <col class="col-all" style="width: 32%;">
+            <col class="col-day" style="width: 20%;">
+            <col class="col-night" style="width: 20%;">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th colspan="5">출현 포켓몬 Lv: ? ~ 50</th>
+            </tr>
+            <tr>
+                <th>출현 확률</th>
+                <th>출현 위치</th>
+                <th>상시</th>
+                <th>낮</th>
+                <th>밤</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>흔한 확률</td>
+                <td>지상</td>
+                <td>골비람, 아이앤트, 오뚝군, 동미러</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">드문 확률</td>
+                <td>지상</td>
+                <td>앱솔, 미라몽</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>점토도리</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">귀한 확률</td>
+                <td>지상</td>
+                <td>동탁군, 단칼빙, 프리지오</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>공중</td>
+                <td>고우스트</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>굉장히 귀한 확률</td>
+                <td>지상</td>
+                <td>???, ???</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>우두머리</td>
+                <td>지상</td>
+                <td>■■■</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
