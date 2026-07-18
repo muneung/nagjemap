@@ -864,6 +864,19 @@
 /* ==========================================
    ROUTE (도로 구역 - #fff2cc)
    ========================================== */
+
+.ritz .waffle .route-a {
+    background-color: #efefef;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
 .ritz .waffle .route-d {
     border-top: 1px SOLID #000000;
     border-right: 1px SOLID #000000;
