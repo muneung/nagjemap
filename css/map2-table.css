@@ -246,6 +246,22 @@
     padding: 2px 3px 2px 3px;
 }
 
+.ritz .waffle .city-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
 /* ==========================================
    SAND (사막 지형 구역 - #FFC40F)
    ========================================== */
