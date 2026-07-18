@@ -1,0 +1,938 @@
+.ritz .waffle a {
+    color: inherit;
+}
+
+//공백
+
+.ritz .waffle .s-a {
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .s-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+// 시티용, a무경계 b상하좌우 c코너
+
+.ritz .waffle .city-a {
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .city-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ead1dc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   SAND (사막 지형 구역 - #FFC40F)
+   ========================================== */
+.ritz .waffle .sand-a {
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   TREE (숲 지형 구역 - #005B00)
+   ========================================== */
+.ritz .waffle .tree-a {
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   SWAMP (늪지 지형 구역 - #3A864C)
+   ========================================== */
+.ritz .waffle .swamp-a {
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .swamp-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   ROCK (바위/화산 지형 구역 - #C45400)
+   ========================================== */
+.ritz .waffle .rock-a {
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .rock-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   SNOW (설산 지형 구역 - #9BF4FF)
+   ========================================== */
+.ritz .waffle .snow-a {
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-b1 {
+    border-top: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-b2 {
+    border-right: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-b3 {
+    border-bottom: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-b4 {
+    border-left: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-c1 {
+    border-top: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-c2 {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-c3 {
+    border-bottom: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   ROUTE (도로 구역 - #fff2cc)
+   ========================================== */
+.ritz .waffle .route-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #fff2cc;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   TOWN (마을 구역 - #d9ead3)
+   ========================================== */
+.ritz .waffle .town-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #d9ead3;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   SITE (특수 장소 구역 - #fce5cd)
+   ========================================== */
+.ritz .waffle .site-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #fce5cd;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+/* ==========================================
+   DUNGEON (던전 구역 - #ea9999)
+   ========================================== */
+.ritz .waffle .dungeon-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #ea9999;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
