@@ -43,6 +43,11 @@ async function navigateTo(pageUrl) {
             loadRecipeDetail();
         }
 
+        // 날씨 위젯
+        if (document.getElementById('weather-widget')) {
+            loadWeatherWidget();
+        }
+
         // 메뉴 활성화 표시 업데이트
         highlightActiveMenu(); 
 
@@ -200,6 +205,55 @@ function loadRecipeDetail() {
         });
 }
 
+
+
+// ====================================================================
+// 일기예보 위젯
+// ====================================================================
+function loadWeatherWidget() {
+    const widget = document.getElementById('weather-widget');
+    if (!widget) return;
+
+    const forecasts = [
+        { weather: "☀ 맑음", text: "오늘은 대체로 맑을 것으로 예상됩니다.<br>모험을 떠나기에 덧없이 완벽한 하루가 될 예정입니다.<br>몬스터볼과 상처약은 충분한가요?" },
+        { weather: "🌤 구름", text: "구름이 조금 끼겠지만, 대체로 좋은 날씨가 예상됩니다.<br>이따금 구름이 사이로 햇살이 내리쬐는 좋은 날씨일 것입니다." },
+        { weather: "☁ 흐림", text: "흐린 하늘이 이어질 것으로 예상됩니다.<br>비가 내릴 가능성은 없겠으나, 태양이 잘 보이지 않을 전망입니다." },
+        { weather: "🌧 비", text: "온종일 비가 내릴 것으로 예상됩니다.<br>웅덩이를 밟지 않도록 주의하세요.<br>눈이 내리는 지역에서는 설경을 관측할 수 있을 것입니다." },
+        { weather: "⛈ 천둥", text: "천둥과 번개를 동반한 비가 예상됩니다.<br>비는 잦아들지 않고 하루 온종일 내릴 예정입니다.<br>우산을 잊진 않았는지 점검해 보세요." },
+        { weather: "🌫 안개", text: "안개가 이데아를 가릴 것으로 예상됩니다.<br>시야가 흐릴 수 있으니 주의하시길 바랍니다.<br>앞을 잘 보면서 조심조심 걸으세요." },
+        { weather: "💨 강풍", text: "편서풍이 강하게 불 것으로 예상됩니다." }
+    ];
+
+    function getSeed() {
+        const d = new Date();
+        return Number(
+            d.getFullYear().toString() +
+            String(d.getMonth() + 1).padStart(2, '0') +
+            String(d.getDate()).padStart(2, '0')
+        );
+    }
+
+    function mulberry32(a) {
+        return function () {
+            let t = a += 0x6D2B79F5;
+            t = Math.imul(t ^ t >>> 15, t | 1);
+            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+    }
+
+    const rand = mulberry32(getSeed());
+    const today = forecasts[Math.floor(rand() * forecasts.length)];
+    const d = new Date();
+    const dateString = `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일`;
+
+    widget.innerHTML = `
+        <h3>☁ 시어하트의 일기예보</h3>
+        <p><strong>관측일</strong><br>${dateString}</p>
+        <p><strong>오늘의 하늘</strong><br>${today.weather}</p>
+        <p>${today.text}</p>
+    `;
+}
 
 
 
