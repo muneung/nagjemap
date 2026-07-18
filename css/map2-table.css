@@ -2,7 +2,7 @@
     color: inherit;
 }
 
-//공백
+/* 공백 */
 
 .ritz .waffle .s-a {
     background-color: #ffffff;
@@ -124,7 +124,7 @@
     padding: 2px 3px 2px 3px;
 }
 
-// 시티용, a무경계 b상하좌우 c코너
+/* 시티용, a무경계 b상하좌우 c코너 */
 
 .ritz .waffle .city-a {
     background-color: #ead1dc;
