@@ -1041,6 +1041,7 @@
 
 .ritz .waffle .site-b1 {
     border-top: 1px SOLID #000000;
+    background-color: #fce5cd;
     text-align: center;
     color: #000000;
     font-family: "Galmuri14", Arial;
@@ -1121,7 +1122,7 @@
 
 .ritz .waffle .site-c3 {
     border-right: 1px SOLID #000000;
-    border-left: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
     background-color: #fce5cd;
     text-align: center;
     color: #000000;
@@ -1134,7 +1135,7 @@
 }
 
 .ritz .waffle .site-c4 {
-    border-right: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
     border-bottom: 1px SOLID #000000;
     background-color: #fce5cd;
     text-align: center;
