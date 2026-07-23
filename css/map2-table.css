@@ -385,6 +385,36 @@
     padding: 2px 3px 2px 3px;
 }
 
+.ritz .waffle .sand-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .sand-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #FFC40F;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
 /* ==========================================
    TREE (숲 지형 구역 - #005B00)
    ========================================== */
@@ -495,6 +525,22 @@
 }
 
 .ritz .waffle .tree-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #005B00;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .tree-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
     border-bottom: 1px SOLID #000000;
     border-left: 1px SOLID #000000;
     background-color: #005B00;
@@ -631,6 +677,22 @@
     padding: 2px 3px 2px 3px;
 }
 
+.ritz .waffle .swamp-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #3A864C;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
 /* ==========================================
    ROCK (바위/화산 지형 구역 - #C45400)
    ========================================== */
@@ -754,6 +816,22 @@
     padding: 2px 3px 2px 3px;
 }
 
+.ritz .waffle .rock-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #C45400;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
 /* ==========================================
    SNOW (설산 지형 구역 - #9BF4FF)
    ========================================== */
@@ -864,6 +942,22 @@
 }
 
 .ritz .waffle .snow-c4 {
+    border-bottom: 1px SOLID #000000;
+    border-left: 1px SOLID #000000;
+    background-color: #9BF4FF;
+    text-align: center;
+    color: #000000;
+    font-family: "Galmuri14", Arial;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 2px 3px 2px 3px;
+}
+
+.ritz .waffle .snow-d {
+    border-top: 1px SOLID #000000;
+    border-right: 1px SOLID #000000;
     border-bottom: 1px SOLID #000000;
     border-left: 1px SOLID #000000;
     background-color: #9BF4FF;
