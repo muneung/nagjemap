@@ -442,6 +442,12 @@ body {
     text-decoration: underline;
 }
 
+/* 지도 테이블 중앙정렬 */
+.map-table-inner {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 
 /* =============== 도로 안내 테이블 레이아웃 =============== */
@@ -491,6 +497,7 @@ body {
     background-color: #f0f0f0;
     text-align: center;
 }
+
 
 
 
