@@ -421,8 +421,6 @@ body {
     line-height: 1.4;   /* 행간 조정 */
     letter-spacing: -0.5px;     /* 자간 조정 */
 
-    display: flex;
-    justify-content: center;
 }
 /* 테이블 폭을 필요한 만큼 최대로 확장 (스크롤 때문에) */
 .map-table-container table {
