@@ -48,6 +48,11 @@ async function navigateTo(pageUrl) {
             loadWeatherWidget();
         }
 
+        // 대량출현 위젯
+        if (document.getElementById('swarm-widget')) {
+            loadSwarmWidget();
+        }
+
         // 메뉴 활성화 표시 업데이트
         highlightActiveMenu(); 
 
@@ -255,6 +260,65 @@ function loadWeatherWidget() {
     `;
 }
 
+
+// ====================================================================
+// 대량출현 위젯
+// ====================================================================
+function loadSwarmWidget() {
+    const widget = document.getElementById('swarm-widget');
+    if (!widget) return;
+
+    const swarmData = {
+        "2번도로": ["도토링", "파오리"],
+        "3번도로": ["두루지벌레", "콩알뚜기"],
+        "4번도로": ["야돈", "들눈해"],
+        "5번도로": ["노고치", "페라페"],
+        "6번도로": ["내던숭이", "절벼게"],
+        "7번도로": ["깜지곰", "단굴"],
+        "8번도로": ["포니타", "줄뮤마"],
+        "9번도로": ["노라키", "소미안"],
+        "10번도로": ["베루키", "<strong>그푸리</strong>가 굴러다니는 중!"],
+        "11번도로": ["물거미", "단단지"],
+        "12번도로": ["요가랑", "판짱"],
+        "13번도로": ["콘치", "코코리"],
+        "14번도로": ["꼬이밍고", "식스테일"],
+        "15번도로": ["몸지브림", "쫀도기"],
+        "16번도로": ["터검니", "빙큐보"],
+        "20번도로": ["플로젤", "돌살이"],
+        "21번도로": ["꼬시레", "찌르성게"]
+    };
+
+    const now = new Date();
+    const seed =
+        now.getFullYear() * 10000 +
+        (now.getMonth() + 1) * 100 +
+        now.getDate();
+
+    function seededRandom(seed) {
+        const x = Math.sin(seed) * 10000;
+        return x - Math.floor(x);
+    }
+
+    const routes = Object.keys(swarmData);
+
+    const routeSeed = seed * 69;
+    const pokemonSeed = seed * 74;
+
+    const route =
+        routes[Math.floor(seededRandom(routeSeed) * routes.length)];
+
+    const pokemonList = swarmData[route];
+
+    const pokemon =
+        pokemonList[Math.floor(seededRandom(pokemonSeed) * pokemonList.length)];
+
+
+    document.getElementById("swarm-widget").innerHTML = `
+        <h3>✨ 대량출현</h3>
+
+        <p><strong>${route}</strong>에서 ${pokemon}</strong></p>
+    `;
+}
 
 
 // ====================================================================
